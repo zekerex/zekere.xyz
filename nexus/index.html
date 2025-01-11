@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS</title>
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.webp" />
+    <link href="nexus.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+
+    <div class="window" id="window1">
+        <div class="window-header" id="header1">
+            <span>Navigation</span>
+        </div>
+        <div class="window-content">
+            <ul
+                class="tree-padding tree-vertical-lines tree-horizontal-lines tree-summaries tree-markers tree-buttons noselect">
+                <details open="">
+                    <summary>General</summary>
+                    <ul>
+                        <li><a href="" class="tag">Movies & TV</a></li>
+                        <li><a href="" class="tag">Literature</a></li>
+                    </ul>
+                </details>
+                <li>
+                    <details open="">
+                        <summary>Video Games</summary>
+                        <ul>
+                            <li><a href="" class="tag">Game list</a></li>
+                            <li><a href="/favourites/favpokemon.html" target="iframe2" class="tag">Favourite
+                                    Pokemon</a></li>
+                            <li><a href="" class="tag">SPORE</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <details open="">
+                    <summary>Specialized Subjects</summary>
+                    <ul>
+                        <li><a href="" class="tag">Paleontology</a></li>
+                        <li><a href="" class="tag">Computing</a></li>
+                    </ul>
+                </details>
+            </ul>
+        </div>
+        <div class="resize-handle" id="resize-handle1"></div>
+    </div>
+
+    <div class="window" id="window2">
+        <div class="window-header" id="header2">
+            <span>NEXUS</span>
+        </div>
+        <div class="window-content">
+            
+            <iframe src="/what/fling.html" name="iframe2" id="iframe1"></iframe>
+        </div>
+        <div class="resize-handle" id="resize-handle2"></div>
+    </div>
+
+    <div id="bar">
+        <button onclick="window.location.href='/about.html';">Go Back</button>
+        <button id="resetButton">Reset Window Positions</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

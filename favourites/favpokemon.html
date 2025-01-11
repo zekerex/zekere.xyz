@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xenos' Favourite Pokemon List...</title>
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+
+    <style>
+        body {
+            background: url(/assets/favourites/bg2.jpg);
+            background-size: cover;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -o-pixelated;
+            image-rendering: pixelated;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            margin-top: 50px
+        }
+
+        .mainbox {
+            background: linear-gradient(to right, #7714a9b9, #14a98e4e, #0000);
+            backdrop-filter: blur(10px);
+
+            box-shadow: inset #ffffffb9 0 0 10px 3px;
+
+            border-radius: 3em;
+            width: 80%;
+            padding: 1em;
+            text-align: center;
+
+            animation: bounce 5s ease-out infinite;
+        }
+
+        .secondbox {
+            width: 70%;
+            border-radius: 2em;
+        }
+
+
+        .aero {
+            background-color: #00ffeab9;
+            background: radial-gradient(farthest-corner at bottom center,
+                    rgba(255, 255, 255, 0.7),
+                    transparent),
+                linear-gradient(to bottom, #00ffeab9, #00ff2fb9);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+            border: 1px solid #00ffeab9;
+            color: rgba(50, 26, 17, 0.952);
+
+
+            margin: 1em 1ex;
+            padding: 1ex 1em;
+            position: relative;
+            text-shadow: 0 2px 0.5em #0003;
+
+
+            text-decoration: none;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+
+        .aero::after {
+            content: "";
+            position: absolute;
+            top: 8%;
+            height: 40%;
+            width: 95%;
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0.8),
+                    rgba(255, 255, 255, 0.1));
+            border-radius: 10em;
+            left: 2.5%;
+        }
+
+        .aero .muted {
+            color: rgba(50, 26, 17, 0.244);
+        }
+
+        button {
+            border-radius: 10px;
+            transition: all .10s;
+        }
+
+        button.aero:hover {
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+            filter: brightness(70%);
+        }
+
+        button.aero:active {
+            transform: translate(1px, 1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        p.text-center {
+            text-align: center;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translatey(0px);
+            }
+
+            50% {
+                transform: translatey(-10px);
+            }
+
+            100% {
+                transform: translatey(0px);
+            }
+
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: baseline;
+            gap: 5px;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="mainbox">
+            <div class="secondbox aero">
+                <h3>NEO'S FAVOURITE POKEMON</h2>
+                    <p class="muted">(I miss gen 5)</p>
+            </div>
+
+            <div class="row">
+                <img src="/assets/graphics/pokesprites/rayquaza.gif">
+                <a href="/what/DDd68.html"><img src="/assets/graphics/pokesprites/dialga.gif"></a>
+                <img src="/assets/graphics/pokesprites/lugia.gif">
+                <img src="/assets/graphics/pokesprites/zekrom.gif">
+            </div>
+
+            <div class="row">
+                <img src="/assets/graphics/pokesprites/scoliopede.gif">
+                <img src="/assets/graphics/pokesprites/garchomp.gif">
+                <img src="/assets/graphics/pokesprites/armaldo.gif">
+                <img src="/assets/graphics/pokesprites/sableye.gif">
+                <img src="/assets/graphics/pokesprites/chandelure.gif">
+                <img src="/assets/graphics/pokesprites/quagsire.gif">
+                <img src="/assets/graphics/pokesprites/archops.gif">
+                <img src="/assets/graphics/pokesprites/ampharos.gif">
+                <img src="/assets/graphics/pokesprites/typhlosion.gif">
+                <img src="/assets/graphics/pokesprites/carnivine.gif">
+            </div>
+
+            <div class="row">
+                <img src="/assets/graphics/pokesprites/yveltal.gif" width="100px">
+                <img src="/assets/graphics/pokesprites/hydreigon.gif">
+                <img src="/assets/graphics/pokesprites/mewtwo.gif">
+                <img src="/assets/graphics/pokesprites/gliscor.gif">
+                <img src="/assets/graphics/pokesprites/rotom.gif">
+                <img src="/assets/graphics/pokesprites/raichu.gif">
+                <img src="/assets/graphics/pokesprites/snivy.gif">
+                <img src="/assets/graphics/pokesprites/sceptile.gif">
+                <img src="/assets/graphics/pokesprites/flygon.gif">
+                <img src="/assets/graphics/pokesprites/reluncius.gif">
+            </div>
+
+            <div class="row">
+                <img src="/assets/graphics/pokesprites/porygon-z.gif">
+                <img src="/assets/graphics/pokesprites/banette.gif">
+            </div>
+        </div>
+
+        <!--<button class="aero" onclick="window.location.href='/favourites/index.html';">Go Back</button>-->
+    </div>
+
+</body>
+
+</html>

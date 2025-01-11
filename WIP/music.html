@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIP MUSIC PLAYER</title>
+    <style>
+        /* Simple styles for the player */
+        #controls {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        #volume {
+            width: 100px;
+        }
+        #seekbar {
+            width: 100%;
+            margin-top: 10px;
+        }
+        #songName {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        #playlist {
+            margin-top: 20px;
+            padding: 10px;
+        }
+        #playlist li {
+            cursor: pointer;
+            padding: 5px;
+        }
+        #playlist li:hover {
+            background-color: #ccc;
+        }
+        /* Style for equalizer canvas */
+        #equalizer {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Please Note that this is a giant WIP</h1>
+    <audio id="music" preload="auto"></audio>
+    <canvas id="equalizer" width="900" height="300"></canvas>
+    
+    <div id="controls">
+        <button id="playPause">Play</button>
+        <button id="prevSong">Previous</button>
+        <button id="nextSong">Next</button>
+        <button id="stop">Stop</button>
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+    </div>
+
+    <!-- Seekbar and Song Name -->
+    <input type="range" id="seekbar" value="0" min="0" max="100" step="1">
+    <div id="currentTime">0:00</div>
+    <div id="songName"></div>
+
+    <!-- Playlist -->
+    <ul id="playlist">
+        <li data-index="0">City Lights</li>
+        <li data-index="1">Loop5000</li>
+    </ul>
+
+
+    <script>
+        const songUrls = [
+            "/assets/audio/city_lights.mp3",
+            "/assets/audio/loop5000.mp3"
+        ];
+
+        const songNames = [
+            "City Lights",
+            "Loop5000"
+        ];
+
+        let currentSongIndex = 0;
+        const music = document.getElementById('music');
+        const playPauseButton = document.getElementById('playPause');
+        const prevSongButton = document.getElementById('prevSong');
+        const nextSongButton = document.getElementById('nextSong');
+        const stopButton = document.getElementById('stop');
+        const volumeControl = document.getElementById('volume');
+        const seekbar = document.getElementById('seekbar');
+        const currentTimeDiv = document.getElementById('currentTime');
+        const songNameDiv = document.getElementById('songName');
+        const canvas = document.getElementById('equalizer');
+        const ctx = canvas.getContext('2d');
+        const playlist = document.getElementById('playlist');
+        const eqR = document.getElementById('eqR');
+        const eqG = document.getElementById('eqG');
+        const eqB = document.getElementById('eqB');
+
+        // Audio context and equalizer setup
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const analyser = audioContext.createAnalyser();
+        analyser.fftSize = 256;
+        const bufferLength = analyser.frequencyBinCount;
+        const dataArray = new Uint8Array(bufferLength);
+
+        const source = audioContext.createMediaElementSource(music);
+        source.connect(analyser);
+        analyser.connect(audioContext.destination);
+
+        // Load the song and update song name
+        function loadSong(index) {
+            currentSongIndex = index;
+            music.src = songUrls[currentSongIndex];
+            songNameDiv.textContent = songNames[currentSongIndex];
+            music.load();
+            updateSeekbar();
+        }
+
+        // Play or Pause song
+        function togglePlayPause() {
+            if (music.paused) {
+                music.play();
+                playPauseButton.textContent = 'Pause';
+            } else {
+                music.pause();
+                playPauseButton.textContent = 'Play';
+            }
+        }
+
+        // Stop the song
+        function stopSong() {
+            music.pause();
+            music.currentTime = 0;
+            playPauseButton.textContent = 'Play';
+        }
+
+        // Play next song
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % songUrls.length;
+            loadSong(currentSongIndex);
+            music.play();
+            playPauseButton.textContent = 'Pause';
+        }
+
+        // Play previous song
+        function prevSong() {
+            currentSongIndex = (currentSongIndex - 1 + songUrls.length) % songUrls.length;
+            loadSong(currentSongIndex);
+            music.play();
+            playPauseButton.textContent = 'Pause';
+        }
+
+        // Update volume
+        function updateVolume() {
+            music.volume = volumeControl.value;
+        }
+
+        // Update seekbar as the song plays
+        function updateSeekbar() {
+            seekbar.max = music.duration;
+            seekbar.value = music.currentTime;
+            currentTimeDiv.textContent = formatTime(music.currentTime);
+        }
+
+        // Format time for display
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        // Equalizer function
+        function draw() {
+            requestAnimationFrame(draw);
+            analyser.getByteFrequencyData(dataArray);
+
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            const barWidth = (canvas.width / bufferLength) * 2.5;
+            let barHeight;
+            let x = 0;
+
+            for (let i = 0; i < bufferLength; i++) {
+                barHeight = dataArray[i] / 2;
+
+                const r = (barHeight + 25) * (i / bufferLength);
+                const g = 200 * (i / bufferLength);
+                const b = 200;
+
+                ctx.fillStyle = `rgb(${r},${g},${b})`;
+                ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+
+                x += barWidth + 1;
+            }
+        }
+
+        // Playlist click event to change song
+        playlist.addEventListener('click', (e) => {
+            if (e.target.tagName === 'LI') {
+                const index = e.target.getAttribute('data-index');
+                loadSong(index);
+                music.play();
+                playPauseButton.textContent = 'Pause';
+            }
+        });
+
+        // Event listeners for controls
+        playPauseButton.addEventListener('click', togglePlayPause);
+        stopButton.addEventListener('click', stopSong);
+        nextSongButton.addEventListener('click', nextSong);
+        prevSongButton.addEventListener('click', prevSong);
+        volumeControl.addEventListener('input', updateVolume);
+        seekbar.addEventListener('input', () => {
+            music.currentTime = seekbar.value;
+        });
+
+        // Initial setup when page loads
+        window.addEventListener('load', () => {
+            loadSong(currentSongIndex);
+            audioContext.resume().then(() => {
+                draw();
+            }).catch((error) => {
+                console.log('Autoplay error:', error);
+            });
+        });
+
+        // Update seekbar every time the song progresses
+        music.addEventListener('timeupdate', updateSeekbar);
+
+    </script>
+</body>
+</html>

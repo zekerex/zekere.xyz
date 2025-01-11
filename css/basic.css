@@ -1,0 +1,33 @@
+body {
+    background: #000;
+    color: #b6b6b6;
+    padding: 1em;
+    font-family: "IBM-DOS"
+}
+
+p {
+    padding: 5px;
+}
+
+.muted {color: #6e6b6b}
+
+a, .gern {
+    color: #81b112;
+}
+
+ul {
+    margin: 0;
+}
+
+.chunk {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sublist {
+    padding: 2px 7px 15px 30px;
+}
+
+h1, h2, h3, h4, .header {
+    color: #fff;
+}

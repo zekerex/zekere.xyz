@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Κέντρο Μεταμόρφωσης</title>
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    </link>
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
+
+    <script>
+        function bounceImage() {
+            var ball = document.getElementById("bounce");
+            var xPos = 0;
+            var yPos = 0;
+            var xSpeed = 5; // Horizontal speed
+            var ySpeed = 5; // Vertical speed
+            var originalWidth = ball.offsetWidth;
+            var originalHeight = ball.offsetHeight;
+            var squishRatio = 0.8; // Squish ratio when colliding
+            var resetDelay = 300; // Delay in milliseconds before resetting
+
+            /* Change the ySpeed and xSpeed to adjust the speed */
+
+            setInterval(function () {
+                var containerWidth = window.innerWidth - ball.offsetWidth;
+                var containerHeight = window.innerHeight - ball.offsetHeight;
+
+                // Calculate the new position
+                xPos += xSpeed;
+                yPos += ySpeed;
+
+                // Check for collisions with the container edges
+                if (xPos <= 0 || xPos >= containerWidth) {
+                    xSpeed *= -1; // Reverse horizontal direction
+                    ball.style.transform = 'scaleX(' + squishRatio + ')';
+                    resetScaleAfterDelay();
+                }
+
+                if (yPos <= 0 || yPos >= containerHeight) {
+                    ySpeed *= -1; // Reverse vertical direction
+                    ball.style.transform = 'scaleY(' + squishRatio + ')';
+                    resetScaleAfterDelay();
+                }
+
+                // Update the image position
+                ball.style.left = xPos + "px";
+                ball.style.top = yPos + "px";
+            }, 10);
+
+            function resetScaleAfterDelay() {
+                setTimeout(function () {
+                    ball.style.transform = 'scale(1)';
+                }, resetDelay);
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            background: url(/assets/graphics/bg/galaxy.aqua.gif);
+            background-size: 400px;
+
+        }
+
+        .shadow {
+            box-shadow: 10px 10px 18px 0px rgb(0, 0, 0);
+        }
+
+        canvas {
+            border: solid 1px #fff;
+            background: #000;
+            border-left: none;
+            border-right: none;
+        }
+
+        .blinkies {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .blinkies img {
+            width: 100px;
+        }
+
+        .stamps {
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .stamps img {
+            width: 80px;
+        }
+
+        #bounce {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1000;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .alert {
+            background: url(/assets/graphics/bg/red_arrows.gif);
+            border: 2px solid red;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            position: absolute;
+            right: 100px;
+            top: 230px;
+            z-index: 7;
+        }
+
+        .alert .text {
+            font-size: 2em;
+            background: #000;
+            padding: 5px;
+            color: red;
+            border: 1px solid red;
+            font-family: "DOS-V"
+        }
+
+        .dia {
+            perspective: 1000px;
+            width: 350px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            position: absolute;
+            left: 0;
+            top: 200px;
+        }
+
+        .dia img {
+            height: auto;
+            transform-style: preserve-3d;
+            animation: spin 5s infinite linear;
+            width: 500px;
+        }
+
+        .CUBE {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            width: 600px;
+            z-index: 3;
+        }
+
+        .media {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+            z-index: 5;
+            width: 250px;
+        }
+
+        .media img {
+            animation: wow 5s infinite;
+        }
+
+        .yes {
+            background: url(/assets/graphics/bg/colourful.grid.gif);
+            background-size: 35px;
+            width: 650px;
+            height: 490px;
+            border: 2px ridge red;
+            border-left: none;
+            z-index: 2;
+            top: 50px;
+            position: absolute;
+        }
+
+        .amazingtext {
+            background: #000;
+            display: flex;
+            font-family: "DOS-V"
+        }
+
+        .amazingtext .warning {
+            font-size: 2em;
+            color: #fff;
+        }
+
+        .amazingtext .text-container {
+            white-space: nowrap;
+            overflow: hidden;
+            font-family: "DOS-V"
+        }
+
+        .amazingtext .text {
+            animation: marquee 15s linear infinite;
+            display: inline-block;
+            padding-right: 10px;
+            margin-right: -10px;
+            font-size: 2em;
+            color: #fff;
+        }
+
+        .amazingtext .text:nth-child(2) {
+            animation-delay: 15s;
+        }
+
+        #lizardzone {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+        }
+
+        .leezard {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+
+        .sprite {
+            image-rendering: crisp-edges;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+
+            50% {
+                transform: rotateY(180deg) rotateX(20deg);
+            }
+
+            100% {
+                transform: rotateY(360deg) rotateX(0deg);
+            }
+        }
+
+        @keyframes wow {
+            0% {
+                filter: hue-rotate(360deg);
+            }
+
+            100% {
+                filter: hue-rotate(-360deg);
+            }
+        }
+
+        @keyframes dire {
+            from {
+                color: red;
+            }
+
+            to {
+                color: yellow;
+            }
+        }
+
+        .rainbow {
+            animation: rainbow 1s infinite linear;
+        }
+
+        @keyframes rainbow {
+            0% {
+                color: red;
+            }
+
+            10% {
+                color: orange;
+            }
+
+            20% {
+                color: yellow;
+            }
+
+            30% {
+                color: lime;
+            }
+
+            50% {
+                color: blue;
+            }
+
+            90% {
+                color: #5e00ca;
+            }
+
+            100% {
+                color: #ff00ae;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <img onload="bounceImage()" id="bounce" class="sprite" src="/assets/graphics/pokesprites/palkia.gif">
+
+    <div class="amazingtext" aria-hidden="true">
+        <div class="warning">WARNING!!!</div>
+        <div class="text-container">
+            <div class="text">
+                <div class="rainbow">
+                    Given that a cube with edge length a {\displaystyle a}. The face diagonal of a cube is the diagonal
+                    of a
+                    square a 2 {\displaystyle a{\sqrt {2}}}, and the space diagonal of a cube is a line connecting two
+                    vertices that is not in the same face, formulated as a 3 {\displaystyle a{\sqrt {3}}}. Both formulas
+                    can
+                    be determined by using Pythagorean theorem. The surface area of a cube A {\displaystyle A} is six
+                    times
+                    the area of a square:[4] A = 6 a 2 . {\displaystyle A=6a^{2}.} The volume of a cuboid is the product
+                    of
+                    length, width, and height. Because the edges of a cube are all equal in length, it is:[4] V = a 3 .
+                    {\displaystyle V=a^{3}.}
+                </div>
+            </div>
+            <div class="text">
+                <div class="rainbow">
+                    Given that a cube with edge length a {\displaystyle a}. The face diagonal of a cube is the diagonal
+                    of a
+                    square a 2 {\displaystyle a{\sqrt {2}}}, and the space diagonal of a cube is a line connecting two
+                    vertices that is not in the same face, formulated as a 3 {\displaystyle a{\sqrt {3}}}. Both formulas
+                    can
+                    be determined by using Pythagorean theorem. The surface area of a cube A {\displaystyle A} is six
+                    times
+                    the area of a square:[4] A = 6 a 2 . {\displaystyle A=6a^{2}.} The volume of a cuboid is the product
+                    of
+                    length, width, and height. Because the edges of a cube are all equal in length, it is:[4] V = a 3 .
+                    {\displaystyle V=a^{3}.}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="dia sprite">
+        <img src="/assets/graphics/pokesprites/dialga.gif">
+    </div>
+
+    <img class="sprite" src="/assets/graphics/sprites/mariobros2.gif" style="width: 80px; 
+        position: absolute; 
+        left: 450px; 
+        top: 230px;
+        z-index: 5;">
+
+    <img class="sprite" src="/assets/graphics/sprites/mariobros.gif"
+        style="position: absolute; z-index: 5; width: 200px; left: 300px;">
+
+    <img class="sprite" src="/assets/graphics/sprites/hypersonic.gif"
+        style="position: absolute; z-index: 5; transform: rotate(-10deg); width: 120px; left: 550px; top: 80px;">
+
+    <img class="sprite" src="/assets/what/DDd68/smiley.webp"
+        style="position: absolute; z-index: 4; left: 420px; top: 130px; width: 250px; transform: rotate(20deg);">
+
+    <div class="CUBE">
+        <img src="/assets/what/DDd68/RGBcube2.webp">
+    </div>
+
+    <div class="window shadow" style="margin: 32px; 
+    width: 250px; 
+    height: 270px; 
+    position: absolute;
+    left: 170px;
+    top: 120px;
+    z-index: 4;
+    overflow: auto;">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                Ο χρωματικός χώρος RGB απεικονίζεται ως cube.jpg
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <img src="/assets/what/DDd68/RGBcube.jpg">
+        </div>
+    </div>
+
+    <div class="sprite" style="
+        position: absolute;
+       left: 240px;
+       top: 370px;
+       z-index: 6;">
+        <a href="https://www.deviantart.com/skeleion/art/Prepare-For-Some-Doom-566826112"><img
+                src="/assets/graphics/sprites/skelion_DOOM!.gif"></a>
+    </div>
+
+
+    <div class="media" style="-webkit-box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);
+    box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);">
+        <img src="/assets/graphics/WMP7.gif">
+    </div>
+
+    <img class="sprite" src="/assets/graphics/sprites/guilmon.gif" style="width: 260px;
+        height: 260px;
+        position: absolute;
+        left: 0px;
+        top: 90px;
+        z-index: 4;">
+
+    <img class="sprite" src="/assets/graphics/pokesprites/MegaRayquazaShiny.gif" style="z-index: 7; 
+        position: absolute; 
+        left: 490px; 
+        width: 150px; 
+        top: 370px;">
+
+    <div class="yes shadow">
+    </div>
+
+    <!--put equalizer here-->
+
+    <img class="sprite" src="/assets/graphics/sprites/hyeprsonic2.gif"
+        style="position: absolute; z-index: 7; right: 415px; top: 120px; width: 50px;">
+
+    <div class="window" style="margin: 32px; 
+    width: 300px; 
+    height: 200px; 
+    position: absolute;
+    right: 70px;
+    top: 20px;
+    z-index: 4;
+    overflow: auto;
+    -webkit-box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);
+-moz-box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);
+box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                About Me
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            [REDACTED]
+        </div>
+    </div>
+
+    <div class="alert shadow">
+        <span class="text">THIS PAGE WILL CONTINUE TO EVOLVE.</span>
+    </div>
+
+    <div class="window" style="margin: 32px; 
+    width: 300px; 
+    height: 270px; 
+    position: absolute;
+    right: 200px;
+    top: 170px;
+    z-index: 3;
+    overflow: auto;
+    -webkit-box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);
+    box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                '&6s87ewshxgvgBGFACYHvgy SURFACEfraction ofrfre'
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body" style="display: flex; justify-content: center; align-items: center;">
+            <div class="sprite" id="lizardzone">
+                <img src="/assets/what/DDd68/lizard1.webp" class="leezard" id="leezard">
+            </div>
+
+            <script>
+                document.getElementById('leezard').addEventListener('click', function () {
+                    // List of image URLs to swap between
+                    const images = [
+                        '/assets/what/DDd68/lizard1.webp',
+                        '/assets/what/DDd68/lizard2.webp',
+                        '/assets/what/DDd68/lizard3.webp',
+                        '/assets/what/DDd68/lizard4.webp'
+                    ];
+
+                    // Get a random image from the array
+                    const randomImage = images[Math.floor(Math.random() * images.length)];
+
+                    // Set the image source to the new random image
+                    this.src = randomImage;
+                });
+            </script>
+        </div>
+    </div>
+    </div>
+
+
+    <img class="shadow" src="/assets/graphics/protracker.gif"
+        style="width: 400px; position: absolute; z-index: 1; left: 400px; bottom: 250px; border: 2px ridge blue;">
+
+    <div class="window" style="margin: 32px; 
+    width: 320px; 
+    height: 250px; 
+
+    left: 2px;
+    bottom: 70px;
+    position: absolute;
+
+    z-index: 3;
+    overflow: auto;
+    -webkit-box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);
+    box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);">
+        <div class="title-bar">
+            <div class="title-bar-text">
+               Nothing here yet...
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+          Yeah....
+        </div>
+    </div>
+    </div>
+
+    <div class="window" style="
+    width: 250px; 
+    height: 200px; 
+    
+    left: 220px;
+    bottom: 30px;
+    position: absolute;
+    
+    z-index: 3;
+    overflow: auto;
+    -webkit-box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);
+    box-shadow: 10px 10px 18px 0px rgba(0,0,0,1);">
+        <div class="title-bar">
+            <div class="title-bar-text">
+                WOW!!!!!!!
+            </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="blinkies">
+                <img src="/assets/graphics/blinkies/linuxblink.gif">
+                <img src="/assets/graphics/blinkies/blbrain.gif">
+                <img src="/assets/graphics/blinkies/arewealone.gif">
+                <img src="/assets/graphics/blinkies/rainbows_2.gif">
+                <img src="/assets/graphics/blinkies/glow_blink.gif">
+            </div>
+
+            <div class="stamps">
+                <img src="/assets/graphics/stamps/colodee.gif">
+                <img src="/assets/graphics/stamps/weegeestamp.gif">
+                <img src="/assets/graphics/stamps/mspaintsupport.gif">
+                <img src="/assets/graphics/stamps/inlovewiththesky.gif">
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <a href="/weegee/weegeegame.html"><img src="/weegee/sprites/Weegee.webp"
+            style="right: 100px; bottom: 0; position: absolute; width: 100px; z-index: 1;"></a>
+
+    <img src="/assets/graphics/Petrial_cube.gif"
+        style="right: 0; bottom: 0; position: absolute; width: 100px; z-index: 2;">
+
+</body>
+
+</html>

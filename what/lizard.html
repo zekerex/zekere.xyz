@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lizard</title>
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+
+    <style>
+        body {
+            background: #000;
+        }
+
+        #lizard {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #lizard img {
+            width: 30%;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            height: auto;
+            transform-style: preserve-3d;
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+
+            50% {
+                transform: rotateY(180deg) rotateX(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg) rotateX(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="lizard">
+        <img src="/assets/what/watermonitor.webp">
+    </div>
+</body>
+
+</html>

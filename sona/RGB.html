@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB</title>
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="/assets/icons/RGB.webp" />
+
+    <style>
+        html {
+            background: #000 url(/assets/graphics/bg/galaxy.stars.gif);
+            font-family: "Times New Roman", Times, serif;
+            color: #fff;
+            font-size: 14pt;
+        }
+
+        body {
+            padding: 1em;
+        }
+
+        .highlight {
+            color: #ff1b1b;
+            text-decoration: underline;
+        }
+
+        .divider {
+            padding: 1em;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .wrapper .header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background: url(/assets/graphics/bg/noise.purple.jpg);
+            border: 2px ridge rgb(89, 0, 141);
+            padding: 5px;
+        }
+
+        .wrapper .header .graphics img {
+            max-width: 120px;
+        }
+
+
+        #mainbox {
+            background: #000000;
+            border: 10px solid transparent;
+            padding: 1em;
+            background: url(/assets/graphics/bg/colourful.crackle.gif);
+            -o-border-image: url("/assets/sona/rgb/border.webp") 10;
+            border-image: url("/assets/sona/rgb/border.webp") 14;
+            background-clip: border-box;
+            background-clip: padding-box;
+        }
+
+        #mainbox .desc {
+            width: 50%;
+        }
+
+        #mainbox .desc-text {
+            height: 200px;
+            overflow: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        #mainbox .desc-text p {
+            padding: 5px;
+        }
+
+        #mainbox .desc-box::-webkit-scrollbar {
+            display: none;
+        }
+
+        #mainbox2 {
+            background: url(/assets/graphics/bg/computer1.gif);
+            padding: 1em;
+            border: 2px ridge #ff1b1b;
+        }
+
+        #mainbox2 h3,
+        #mainbox2 li {
+            background: #000;
+            color: #2200ff;
+            padding: 5px;
+            width: fit-content;
+            height: fit-content;
+        }
+
+        #mainbox2 ol {
+            list-style-position: inside;
+        }
+
+        #mainbox2 li {
+            margin-bottom: 2px;
+        }
+
+        .box {
+            padding: 1em;
+            background: #000;
+            border: 1px ridge #04ff00;
+        }
+
+        .graphics {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .graphics img {
+            max-width: 100px;
+        }
+
+        .rgbdoll {
+            max-width: 350px;
+        }
+
+
+        .navigation {
+            position: fixed;
+            z-index: 6;
+            bottom: 0;
+            left: 0;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .navigation img {
+            max-width: 150px;
+        }
+
+        .navigation img:hover {
+            filter: brightness(50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigation" id="linkexclude">
+        <a href="/sona/index.html">
+            <img src="/assets/sona/rgb/back.gif">
+        </a>
+
+        <a href="/about.html">
+            <img src="/assets/sona/rgb/home.gif">
+        </a>
+    </div>
+
+
+    <div class="wrapper">
+
+        <div id="mainbox">
+
+            <div class="flex justify">
+                <img class="rgbdoll"
+                    src="/assets/sona/rgb/RGBpagedoll.webp">
+
+                <div class="desc">
+
+                    <div class="graphics">
+                        <img src="/assets/sona/rgb/pyramidspinning.gif">
+                        <img src="/assets/sona/rgb/pyramid.gif">
+                        <img src="/assets/sona/rgb/ButtonScarab.gif">
+                    </div>
+
+                    <div class="desc-text box">
+                        <p>HELLO. THE NAME'S RGB, OR <span class="highlight">MARS.</span></p>
+
+                        <p>I'M AN ANARRCHIST, THROUGH AND THROUGHH! ←~(Ψ▼ｰ▼)∈</p>
+
+                        <p>
+                    </div>
+
+                    <center>
+                        <img src="/assets/sona/rgb/SriYantra.gif">
+                    </center>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="divider">
+            <img src="/assets/sona/rgb/squiggle2.gif">
+        </div>
+
+            <div id="mainbox2">
+                <h3>PLAYLIST</h3>
+                <ol type="1">
+                    <li>Hylics 2 OST - Xeno Arcadia</li>
+                    <li>Osamu Sato - Tv River</li>
+                    <li>Mom - Needle Mountain</li>
+                </ol>
+            </div>
+    </div>
+
+</body>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOW ENTERING...</title>
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.webp" />
+
+    <style>
+        :root {
+            --border: 1px solid #fff;
+            --accent: #607e1b;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            width: 100%;
+            font-family: "IBM-DOS", monospace;
+            font-size: 11pt;
+        }
+
+        a {
+            color: var(--accent);
+            animation: wow 10s infinite;
+
+        }
+
+        hr {
+            border: var(--border);
+            border-bottom: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: IBM-BIOS;
+        }
+
+
+        #mainbox {
+            min-height: 100vh;
+            width: 680px;
+            margin: 0 auto;
+        }
+
+        /*Enter button that displays the site name*/
+        .zekere {
+            justify-content: center;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            padding-bottom: 5px;
+            font-family: "DOS-V", monospace;
+        }
+
+        .wow {
+            background: var(--accent);
+            animation: wow 10s infinite;
+            font-family: IBM-BIOS;
+            font-size: 2em;
+            padding-left: 7px;
+        }
+
+        .wow a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /*Sections*/
+        .section ul {
+            margin: 0;
+            list-style-type: "> ";
+        }
+
+        .section li ul li:first-child {
+            padding: 7px 0px 2px 0px;
+        }
+
+        .section li ul li:last-child {
+            padding: 5px 0px 5px 0px;
+        }
+
+        .section li {
+            line-height: 15px;
+            padding-bottom: 10px;
+        }
+
+        .section .content {
+            padding-top: 10px;
+        }
+
+        /*Section Headers*/
+        .header {
+            background: #fff;
+            color: #000;
+            padding-left: 2px;
+            padding-top: 1px;
+            font-family: IBM-BIOS;
+            font-size: 1em;
+        }
+
+        /*MOBILE COMPATABILITY*/
+        @media screen and (max-width: 700px) {
+
+                body {
+                    padding: 10px;
+                }
+
+                .wow {
+                    font-size: 1.2em;
+                }
+
+                #mainbox {
+                min-height: 100vh;
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        /*ANIMATIONS*/
+        @keyframes wow {
+            from {filter: hue-rotate(0deg);}
+            to {filter: hue-rotate(-360deg);}}
+    </style>
+</head>
+
+<body>
+    <div id="mainbox">
+        now entering...
+        <div class="zekere">
+            <span class="wow">
+                <a href="/home.html">ZEKEREX</a>
+            </span>
+        </div>
+
+        <hr>
+
+        <div class="section" style="padding-top: 5px;">
+            <div class="header">quick links:</div>
+            <div class="content">
+                <!--
+                <ul>
+                    <li><a href="">legacy versions</a></li>
+                    <li><a href="">settings</a></li>
+                </ul>-->
+                Work in progress.
+            </div>
+        </div>
+
+
+        <div class="section" style="padding-top: 20px; padding-bottom: 5px;">
+            <div class="header">disclaimers:</div>
+
+            <div class="content">
+                <ul style="list-style-type: decimal;">
+                    <li><b>Compatibility:</b>
+                        <ul>
+                            <li>This site is not designed for mobile devices. For an ideal
+                                experience, view on PC.</li>
+                            <li>This site is made using Firefox; some things like CSS animations may not entirely work, or be straight up 
+                                broken. As I continue to develop this site, I hope to improve compatibility on various browsers.</li>
+                        </ul>
+                    <li><b>Javascript</b> - There is a good amount of Javascript on here.</li>
+                    <li><b>Photosensitivity</b> - This site contains bright colours and occasional flashing lights.</li>
+                    <li><b>Unfinished Pages or Features</b> - This one speaks for itself, but I am just one person with
+                        too many hobbies constantly fighting
+                        for dominance within my head, so site updates may be sporadic.</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="section" style="padding-top: 20px; display: flex; flex-direction: column; align-items: center;">
+            <img src="/assets/index/sleep.webp" width="310px">
+            (c) 2020 - 2025 RADIATION; all rights reserved.
+        </div>
+
+    </div>
+</body>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT</title>
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.webp" />
+
+    <style>
+
+        body {
+            background: #000000 url(/assets/about/BG.webp);
+            background-position: top;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            color: #cecece;
+        }
+
+        a {
+            color:#00ff22;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        #main {
+            background: #000000;
+            width: 1200px;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            min-height: calc(100% - 32px);
+            box-shadow: -1px 0px 60px 58px rgba(0, 0, 0, 0.719);
+            -webkit-box-shadow: -1px 0px 60px 58px rgba(0, 0, 0, 0.719);
+            -moz-box-shadow: -1px 0px 60px 58px rgba(0, 0, 0, 0.719);
+
+        }
+
+        .logo {
+            width: 400px;
+            z-index: 3;
+            position: absolute;
+        }
+
+        .logo img {
+            width: 400px;
+            position: relative;
+            top: 120px;
+            left: 140px
+        }
+
+        .header {
+            background: url(/assets/about/header.webp);
+            height: 328px;
+            width: 1200px;
+            position: absolute;
+            top: 0;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .footer {
+            background: url(/assets/about/footer.webp);
+            background-position: center;
+            height: 445px;
+            width: 1200px;
+            position: absolute;
+            top: calc(100% - 32px);
+            animation: glow 5s infinite;
+        }
+
+        #section1 {
+            width: 510px;
+            height: 340px;
+            position: relative;
+            left: 60px;
+            top: -90px;
+            z-index: 2;
+        }
+
+        .wow {
+            padding-bottom: 5px;
+        }
+
+        .wow img {
+            width: 470px;
+        }
+
+        .computer {
+            background: url(/assets/about/compbox.webp);
+            background-repeat: no-repeat;
+            background-size: 510px;
+            width: 510px;
+            height: 340px;
+        }
+
+        .computer .content {
+            padding: 1em;
+            line-height: 15px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .content .soft {
+            line-height: 18px;
+        }
+
+        .computer .content pre,
+        .neofetch {
+            font-size: 13px;
+
+        }
+
+        .arch {
+            color: cyan;
+        }
+
+        .neofetch {
+            display: flex;
+            gap: 10px;
+            position: absolute;
+            left: -40px;
+        }
+
+        .neofetchtext {
+            width: 50%;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+
+        #section2 {
+            position: relative;
+            z-index: 2;
+            left: 545px;
+            top: 80px;
+            width: 600px;
+            height: 440px;
+        }
+
+        .descbox {
+            background: url(/assets/about/descbox.webp);
+            background-repeat: no-repeat;
+            background-size: 610px;
+            width: 610px;
+            height: 440px;
+        }
+
+        .descbox .text {
+            position: relative;
+            left: 20px;
+            top: 10px;
+            width: 70%;
+            font-size: 15px;
+            height: 220px;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+
+        .sonas {
+            position: relative;
+            left: 80px;
+        }
+
+        .sonas img {
+            width: 500px;
+        }
+
+        .sonas img:hover {
+            filter: brightness(130%)
+        }
+
+        .tooltip {
+            position: absolute;
+            top: -35px;
+            visibility: hidden;
+            background-color: #000000;
+            color: #00ff22;
+            border: 4px inset;
+            padding: 5px;
+            font-size: 13px;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 10;
+        }
+
+        .tooltip.visible {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            height: 650px;
+
+        }
+
+        .button a {
+            position: absolute;
+            z-index: 4;
+        }
+
+        .button img:hover {
+            filter: brightness(50%);
+            animation: bounce 0.4s;
+            animation-timing-function: ease;
+            animation-timing-function: ease-out;
+        }
+
+        @keyframes glow {
+            0% {
+                filter: brightness(100%);
+            }
+
+            30% {
+                filter: brightness(130%);
+            }
+
+            80% {
+                filter: brightness(80%)
+            }
+
+            100% {
+                filter: brightness(100%);
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="wrapper">
+
+        <div id="main">
+
+            <div class="logo">
+                <img src="/assets/about/ABOUT ME.webp">
+            </div>
+
+            <div class="header"></div>
+            <div id="section2">
+                <div class="sonas">
+                    <a href="/sona/index.html"><img src="/assets/about/sonas.png"></a>
+                    <div class="tooltip">Learn more about my sonas on this page!</div>
+                </div>
+
+                <script>
+                    // Get references to the elements
+                    const hoverElement = document.querySelector('.sonas');
+                    const tooltip = hoverElement.querySelector('.tooltip');
+
+                    // Event listener to show the tooltip and track mouse position
+                    hoverElement.addEventListener('mousemove', (event) => {
+                        // Make the tooltip visible
+                        tooltip.classList.add('visible');
+                    });
+
+                    // Event listener to hide the tooltip when mouse leaves the element
+                    hoverElement.addEventListener('mouseleave', () => {
+                        tooltip.classList.remove('visible');
+                    });
+
+                </script>
+                <div class="descbox">
+                    <div class="text">
+                        <ul>
+                            <li>NAME: RADIATION</li>
+                            <li>CURRENT AREA OF RESIDENCE: inside of a green pixel.</li>
+                            <li>EYES: two, sometimes three. the colour is greenish, blueish, a bit of glornish. it’s
+                                hard to tell. different in any given angle. would that make it plomzesik then?</li>
+                            <li>Water Monitor: <a href="/what/lizard.html">pretty hydrated</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="section1">
+                <div class="wow">
+                    <img src="/assets/about/wowcomp.webp">
+                </div>
+                <div class="computer">
+                    <div class="content">
+
+                        <div class="neofetch">
+                            <pre class="arch noselect">
+                         ▄
+                        ▟█▙
+                       ▟███▙
+                      ▟█████▙
+                     ▟███████▙
+                    ▂▔▀▜██████▙
+                   ▟██▅▂▝▜█████▙
+                  ▟█████████████▙
+                 ▟███████████████▙
+                ▟█████████████████▙
+               ▟███████████████████▙
+              ▟█████████▛▀▀▜████████▙
+             ▟████████▛      ▜███████▙
+            ▟█████████        ████████▙
+           ▟██████████        █████▆▅▄▃▂
+          ▟██████████▛        ▜█████████▙
+         ▟██████▀▀▀              ▀▀██████▙
+        ▟███▀▘                       ▝▀███▙
+       ▟▛▀                               ▀▜▙
+</pre>
+
+                            <div class="neofetchtext">
+                                radiation@roflcopter<br>
+                                --------------------
+                                </ul>
+                                <li><span class="text-cyan">OS</span>: Arch Linux x86_64</li>
+                                <li><span class="text-cyan">Host</span>: hypercube-8</li>
+                                <li><span class="text-cyan">Kernel</span>: 6.11.6-arch1-1</li>
+                                <li><span class="text-cyan">Uptime</span>: 1 hour, 12 mins</li>
+                                <li><span class="text-cyan">Packages</span>: over 9000 (pacman)</li>
+                                <li><span class="text-cyan">Shell</span>: bash 5.2.37></li>
+                                <li><span class="text-cyan">Resolution</span>: 1680x1050</li>
+                                <li><span class="text-cyan">DE</span>: Plasma 6.2.2</li>
+                                </ul>
+                                --------------------
+                                <div class="soft">
+                                    <span class="red tag">Kitra</span> - art, animation<br>
+                                    <span class="orange tag">vscodium</span> - coding <br>
+                                    <span class="yellow tag">obsidian</span> - documents, notes<br>
+                                    <span class="lime tag">kdenlive</span> - video editor</span><br>
+                                    <span class="cyan tag">Ultrabox</span> - music<br>
+                                    <span class="blue tag">Sunvox</span> - also music<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button">
+                <a href="/nexus/index.html"><img src="/assets/about/favouritebutton.webp"></a>
+            </div>
+
+            <div class="footer"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>

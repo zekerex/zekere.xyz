@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohm</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100vh;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size to the window size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Image object
+        const img = new Image();
+        img.src = '/assets/what/ohm_inactive.webp'; // Replace with your image URL
+        let imgWidth = 100;
+        let imgHeight = 100;
+
+        // Physics variables
+        const gravity = 0.8;   // Gravity strength
+        const drag = 0.98;     // Drag for damping the velocity
+        const bounceFactor = 0.8; // Bouncing effect (reduce this for softer bounces)
+
+        let isDragging = false;
+        let imageX = canvas.width / 2 - imgWidth / 2;
+        let imageY = canvas.height / 2 - imgHeight / 2;
+        let velocityX = 0;
+        let velocityY = 0;
+        let offsetX, offsetY;
+
+        // Handle mouse events for dragging the image
+        canvas.addEventListener('mousedown', function (e) {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            
+            // Check if the mouse is inside the image boundaries
+            if (
+                mouseX >= imageX &&
+                mouseX <= imageX + imgWidth &&
+                mouseY >= imageY &&
+                mouseY <= imageY + imgHeight
+            ) {
+                isDragging = true;
+                offsetX = mouseX - imageX;
+                offsetY = mouseY - imageY;
+            }
+        });
+
+        canvas.addEventListener('mousemove', function (e) {
+            if (isDragging) {
+                imageX = e.clientX - offsetX;
+                imageY = e.clientY - offsetY;
+            }
+        });
+
+        canvas.addEventListener('mouseup', function () {
+            isDragging = false;
+            velocityX = (Math.random() - 0.5) * 10; // Random horizontal velocity after release
+            velocityY = (Math.random() - 0.5) * 10; // Random vertical velocity after release
+        });
+
+        // Function to update the image position and apply gravity
+        function update() {
+            if (!isDragging) {
+                // Apply gravity to the vertical velocity
+                velocityY += gravity;
+
+                // Apply drag to both velocities (damping effect)
+                velocityX *= drag;
+                velocityY *= drag;
+
+                // Update the image's position based on its velocity
+                imageX += velocityX;
+                imageY += velocityY;
+
+                // Horizontal bouncing (left and right walls)
+                if (imageX < 0) {
+                    imageX = 0;
+                    velocityX *= -bounceFactor; // Reverse horizontal velocity with bounce factor
+                }
+                if (imageX + imgWidth > canvas.width) {
+                    imageX = canvas.width - imgWidth;
+                    velocityX *= -bounceFactor; // Reverse horizontal velocity with bounce factor
+                }
+
+                // Vertical bouncing (top and bottom walls)
+                if (imageY < 0) {
+                    imageY = 0;
+                    velocityY *= -bounceFactor; // Reverse vertical velocity with bounce factor
+                }
+                if (imageY + imgHeight > canvas.height) {
+                    imageY = canvas.height - imgHeight;
+                    velocityY *= -bounceFactor; // Reverse vertical velocity with bounce factor
+                }
+            }
+
+            // Clear the canvas and redraw the image
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, imageX, imageY, imgWidth, imgHeight);
+
+            // Request the next frame for the animation
+            requestAnimationFrame(update);
+        }
+
+        // Start the animation once the image has loaded
+        img.onload = function () {
+            update();
+        };
+    </script>
+</body>
+</html>

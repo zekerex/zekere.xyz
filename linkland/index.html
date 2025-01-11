@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINKLAND</title>
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.webp" />
+
+    <style>
+        body,
+        html {
+            width: 100%;
+            background:  linear-gradient(180deg, #000000 5%, #00ffea00) fixed, url(/assets/linkland/bg.webp)
+        }
+
+        .orbs {
+            width: 700px;
+            padding: 10px;
+            background-image: url(/assets/linkland/linklandmenu.webp);
+        }
+
+        .orbswithin {
+            position: relative;
+            display: flex;
+            gap: 5px;
+        }
+
+        .orbswithin img {
+            width: 40px;
+        }
+
+        .orbswithin img:hover {
+            filter: brightness(80%);
+        }
+
+        .wrapper {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        .window {
+            width: 65%;
+            min-height: calc(100vh - 100px);
+            margin-left: 15px;
+            margin-top: 15px;
+            border: 15px solid transparent;
+            -o-border-image: url("/assets/linkland/linkborder.webp") 10;
+            border-image: url("/assets/linkland/linkborder.webp") 10;
+            background-clip: border-box;
+            background-clip: padding-box;
+            background: #000;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /*Tooltip Styling*/
+        .tooltip {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .tooltip:hover .tooltipcontent {
+            opacity: 1;
+        }
+
+        .tooltipcontent {
+            opacity: 0;
+            margin-top: 10px;
+            position: fixed;
+            z-index: 1000;
+            height: auto;
+            font-size: 13px;
+            line-height: 1.5em;
+            padding: 0.5em;
+            padding-bottom: 0.2em;
+            background: linear-gradient(180deg, rgb(0, 8, 34) 0%, blue 100%);
+            border: ridge #fff 7px;
+            color: #fff;
+            pointer-events: none; /* This prevents the box from appearing when hovered. */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--Navigation - jumps to section of choice.-->
+    <div class="orbs">
+        <div class="orbswithin">
+            <div class="orb1 tooltip">
+                <a href="/home.html"><img src="/assets/linkland/orb1.webp"></a>
+                <div class="tooltipcontent">Home</div>
+            </div>
+
+            <div class="orb2 tooltip">
+                <a href="/linkland/buttons.html" target="iframe2"><img src="/assets/linkland/orb2.webp"></a>
+                <div class="tooltipcontent">Neighbours</div>
+            </div>
+
+            <div class="orb3 tooltip">
+                <a href="/linkland/software.html" target="iframe2"><img src="/assets/linkland/orb3.webp"></a>
+                <div class="tooltipcontent">Software</div>
+            </div>
+
+            <!--<div class="orb4 tooltip">
+                <a href="#coolthings"><img src="/assets/linkland/orb4.webp"></a>
+                <div class="tooltipcontent">Cool Stuff</div>-->
+            </div>
+        </div>
+    </div>
+
+    <!--Sections-->
+    <div class="wrapper">
+
+        <div class="window">
+            <iframe src="/what/fling.html" name="iframe2" id="iframe1"></iframe>
+        </div>
+
+        <!--Tooltip Script-->
+        <script>
+            // Tooltip Code
+            var tooltip = document.querySelectorAll('.tooltipcontent');
+
+            document.addEventListener('mousemove', fn, false);
+
+            function fn(e) {
+                for (var i = tooltip.length; i--;) {
+                    tooltip[i].style.left = e.pageX + 'px';
+                    tooltip[i].style.top = e.pageY + 'px';
+                }
+            }
+        </script>
+</body>

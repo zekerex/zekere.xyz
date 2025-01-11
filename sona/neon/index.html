@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.webp" />
+    <title>WOW.</title>
+
+    <style>
+        :root {
+            --text: #ffffff;
+            --section-width: 800px;
+            --section-height: 100vh;
+            --section-border: 2px dashed;
+        }
+
+        body {
+            background: #000;
+        }
+
+        .rainbowtext {
+            text-shadow: 1px -3px var(--text);
+            background: linear-gradient(to right, #9e3735, #865062, #352552, #0f4672, #125963, #275c29, #60661b, #8b5d13, #752810);
+            background-clip: border-box;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /*---------*/
+
+        /*SECTION 1*/
+        #section1 {
+            background: linear-gradient(180deg, #000000 0%, #00000000 40%, #000000 100%), url(neonBG1.webp) fixed;
+            background-size: cover;
+            color: var(--text);
+            height: var(--section-height);
+        }
+
+        #section1 .container {
+            height: inherit;
+            width: var(--section-width);
+            margin: 0 auto;
+            background: radial-gradient(#000000ab 60%, #000000 100%);
+            border: var(--section-border);
+            border-top: none;
+            border-bottom: none;
+            position: relative;
+        }
+
+        /*tagline*/
+        .name {
+            z-index: 3;
+            position: relative;
+            left: 10px;
+            top: 15px;
+            transform: rotate(-3deg);
+        }
+        .name .title {font-size: 4em; animation: pulse 5s infinite ease-in-out}
+
+        /*navigation*/
+        .nav {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .nav a {display: block; 
+        background: #000;
+        border: 1px solid white;
+        width: 50px;
+        margin-bottom: 10px;
+        filter: brightness(50%) drop-shadow(0px 8px 2px #00000055);}
+        
+        .nav a:hover {
+            filter: brightness(20%) drop-shadow(0px 8px 2px #00000055);
+        }
+
+        /*container - AKA boxes*/
+        .box {z-index: 5; position: absolute;}
+        .sticker {z-index: 3; position: absolute;}
+
+        .infobox1 {
+            width: 320px;
+            height: 150px;
+            top: 680px;
+            left:  -20px;
+            animation: float2 6s ease-in-out infinite;
+        }
+
+        .infobox2 {
+            width: 320px;
+            height: 200px;
+            top: 100px;
+            right: -20px;
+            animation: float2 5.3s ease-in-out infinite;
+        }
+
+            /*Content box - this is where the actual stuff goes in*/
+            .boxContent {
+                width: inherit;
+                height: inherit;
+                background: #000 url(galaxy_texture.webp);
+                background-size: cover;
+                padding: 10px;
+
+                /*position*/
+                z-index: 1;
+                position: absolute;
+
+                /*border*/
+                border: 3px solid transparent;
+                -o-border-image: url("/assets/sona/rgb/border2.webp") 6;
+                border-image: url("/assets/sona/rgb/border2.webp") 6;
+                background-clip: border-box;
+                background-clip: padding-box;
+            }
+
+            .boxContent hr {
+            border: 1px solid cyan;
+            }
+
+
+            /*Rainbow glowing border*/
+            .therainbow {
+                width: inherit;
+                height: inherit;
+
+                /*background*/
+                background: url(rainbow.webp);
+                background-size: cover;
+                background-position: center;
+
+                /*position*/
+                z-index: 0;
+                position: relative;
+
+                /*animations*/
+                animation: rainbow 20s linear infinite;
+            }
+
+        /*Neon Pagedoll*/
+        .neonCenter {
+            width: 550px;
+            height: 750px;
+            position: relative;
+            top: 15px;
+            left: 100px;
+            z-index: 4;
+            animation: pulse2 4s ease-in-out infinite;
+        }
+
+        .neonCenter img {
+            width: 100%;
+            animation: float1 6s ease-in-out infinite;
+        }
+
+        .neonCenterBG {
+            z-index: 0;
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            filter: opacity(10%);
+            animation: rainbow2 50s linear infinite;
+        }
+
+        /*---------*/
+        /*TABLES*/
+            table.neoTable {
+            border: 1px solid #ffffff;
+            background-color: #00000098;
+            width: 100%;
+            text-align: left;
+            border-collapse: collapse;
+            }
+
+            table.neoTable td, table.neoTable th {
+            border: 1px solid #ffffff;
+            padding: 5px;
+            }
+
+            table.neoTable tr:nth-child(even) {
+            background: #2525259a;
+            }
+
+
+        /*ANIMATIONS*/
+        @keyframes rainbow {
+            0% {filter: blur(10px) hue-rotate(0deg);}
+            50% {filter: blur(15px) hue-rotate(2880deg);}
+            100% {filter: blur(10px) hue-rotate(0deg);}
+        }
+
+        @keyframes rainbow2 {
+            0% {filter: opacity(10%) blur(0px) hue-rotate(0deg);}
+            50% {filter: opacity(15%) blur(5px) hue-rotate(2880deg);}
+            100% {filter: opacity(10%) blur(0px) hue-rotate(0deg);}
+        }
+
+        @keyframes float1 {
+            0% {transform: translate(0px, 10px); filter: drop-shadow(0px 8px 2px #00000055);}
+            50% {transform: translate(0px, -10px); filter: drop-shadow(0px 20px 6px #00000055);}
+            100% {transform: translate(0px, 10px); filter: drop-shadow(0px 8px 2px #00000055);}
+        }
+
+        @keyframes float2 {
+            0% {transform: translate(0px, 5px); filter: drop-shadow(0px 8px 2px #00000055);}
+            50% {transform: translate(0px, -5px); filter: drop-shadow(0px 20px 6px #00000055);}
+            100% {transform: translate(0px, 5px); filter: drop-shadow(0px 8px 2px #00000055);}
+        }
+        
+        @keyframes pulse {
+            0%   {transform: scale(1);}
+            50%  {transform: scale(0.95);}
+            100% {transform: scale(1);}
+        }
+
+        @keyframes pulse2 {
+        0%   {transform: rotate(-3deg) translate(0px, 0px);}
+        50%  {transform: rotate(2deg) translate(0px, 8px);}
+        100% {transform: rotate(-3deg) translate(0px, 0px);}
+        }
+    </style>
+</head>
+
+<body>
+    <!--SECTION1-->
+    <div id="section1">
+        <div class="container">
+
+            <div class="rainbowtext name">
+                <div class="title rainbowtext">A NEW UNIVERSE...</div>
+            </div>
+
+                
+            <div class="nav">
+                <a href=""><img src="galleryIcon.webp"></a>
+                <a href=""><img src="varientsIcon.webp"></a>
+            </div>
+
+                    <div class="infobox1 box">
+                        <div class="boxContent">
+                            <p>
+                                A shapeshifting entity that manifested into this realm with no rhyme or reason; 
+                                made out of the cosmic fluid of the previous dead universe.
+                            </p>
+                        </div>
+
+                    <div class="therainbow"></div>
+                    </div>
+
+                    <!--main pagedoll-->
+                    <div class="neonCenter">
+                    <img src="neonPagedoll.webp">
+                    </div>
+                    <div class="neonCenterBG">
+                        <img src="neonPageBG.webp">
+                    </div>
+
+                    <!--stickers-->
+                    <div class="sticker"
+                    style="top: 420px; 
+                    left: 140px; width: 200px; 
+                    animation: pulse 4s ease-in-out infinite">
+                        <img style="transform: rotate(-30deg);" src="lifeDiamond.webp">
+                    </div>
+
+                    <div class="sticker"
+                    style="top: 240px; 
+                    right: 120px; width: 200px; 
+                    animation: pulse 4s ease-in-out infinite">
+                        <img style="transform: rotate(5deg);" src="ying-yang.webp">
+                    </div>
+
+                    <div class="infobox2 box">
+                        <div class="boxContent" style="display: flex; align-items: center; justify-content: center">
+                            <table class="neoTable">
+                                <tbody>
+                                    <tr>
+                                        <td>NAME:</td>
+                                        <td class="rainbowtext">Neon Starscream Duplex</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SPECIES:</td>
+                                        <td>Chimera dragon; shapeshifter</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PRONOUNS:</td>
+                                        <td>Any</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CREATED:</td>
+                                        <td>2014</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    <div class="therainbow"></div>
+                </div>
+        </div>
+    </div>
+    <!--MAIN SECTION-->
+</body>
+
+</html>
