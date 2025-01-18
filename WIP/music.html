@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WIP MUSIC PLAYER</title>
     <style>
+        .wrapper {
+            width: 880px;
+            margin: 0 auto;
+        }
+
         /* Simple styles for the player */
         #controls {
             margin-top: 20px;
@@ -45,6 +50,7 @@
     </style>
 </head>
 <body>
+    <div class="wrapper">
     <h1>Please Note that this is a giant WIP</h1>
     <audio id="music" preload="auto"></audio>
     <canvas id="equalizer" width="900" height="300"></canvas>
@@ -73,12 +79,12 @@
     <script>
         const songUrls = [
             "/assets/audio/city_lights.mp3",
-            "/assets/audio/loop5000.mp3"
+            "/assets/audio/loop5000.mp3",
         ];
 
         const songNames = [
             "City Lights",
-            "Loop5000"
+            "Loop5000",
         ];
 
         let currentSongIndex = 0;
@@ -229,7 +235,7 @@
 
         // Update seekbar every time the song progresses
         music.addEventListener('timeupdate', updateSeekbar);
-
     </script>
+    </div>
 </body>
 </html>

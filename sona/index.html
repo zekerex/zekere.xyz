@@ -43,7 +43,7 @@
 
         #main {
             background: #000;
-            width: 57%;
+            width: 70%;
             border: 4px solid transparent;
             border-bottom: none;
             border-top: none;
@@ -245,6 +245,13 @@
             to {
                 background-position: 100% 400%;
                 backdrop-filter: saturate(0.8) brightness(20) contrast(3) hue-rotate(2880deg);
+            }
+        }
+
+        /*sizing compatability*/
+        @media screen and (max-width: 1500px) { 
+            #main {
+                width: 90%;
             }
         }
     </style>
