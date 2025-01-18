@@ -71,6 +71,7 @@ li {
     color: #fff;
     display: flex;
     flex-direction: column;
+    border: none;
 }
 
 .window-header {
