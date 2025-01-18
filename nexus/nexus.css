@@ -67,7 +67,6 @@ li {
 /*windows, this is the real meat and potatos of this stylesheet*/
 .window {
     position: absolute;
-    border: 2px solid #000;
     box-sizing: border-box;
     color: #fff;
     display: flex;
@@ -98,7 +97,8 @@ li {
     border-right: 1px solid white;
 }
 
-#window2 .window-content {
+#window2 {
+    padding: 0;
     border: 1px solid white;
 }
 /*windows [END]*/
