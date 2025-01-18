@@ -86,7 +86,7 @@ li {
 .window-content {
     background-color: #000000;
     flex-grow: 1;
-    padding: 5px;
+    padding: 10px;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -94,11 +94,12 @@ li {
 }
 
 /*window styling*/
-#window1 .window-content {
-    padding: 10px;
+#window1 {
+    border-right: 1px solid white;
 }
+
 #window2 .window-content {
-    padding: 10px;
+    border: 1px solid white;
 }
 /*windows [END]*/
 
