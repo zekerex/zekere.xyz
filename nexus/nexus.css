@@ -102,6 +102,10 @@ li {
     padding: 0;
     border: 1px solid white;
 }
+
+#window2 .window-content {
+    padding: 0;
+}
 /*windows [END]*/
 
 /*bottom menu bar stuff*/
