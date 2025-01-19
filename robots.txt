@@ -20,4 +20,4 @@ User-agent: GPTBot
 Disallow: /
 User-agent: ChatGPT-User
 Disallow: /
-Sitemap: https://reiyua.lol/sitemap
+Sitemap: https://zekere.xyz/sitemap
