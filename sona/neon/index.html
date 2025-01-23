@@ -11,7 +11,6 @@
     <style>
         :root {
             --text: #ffffff;
-            --section-width: 800px;
             --section-height: 100vh;
             --section-border: 2px dashed;
         }
@@ -34,12 +33,11 @@
             background: linear-gradient(180deg, #000000 0%, #00000000 40%, #000000 100%), url(neonBG1.webp) fixed;
             background-size: cover;
             color: var(--text);
-            height: var(--section-height);
         }
 
-        #section1 .container {
-            height: inherit;
-            width: var(--section-width);
+        .container {
+            width: 800px;
+            height: 100vh;
             margin: 0 auto;
             background: radial-gradient(#000000ab 60%, #000000 100%);
             border: var(--section-border);
@@ -83,7 +81,7 @@
         .infobox1 {
             width: 320px;
             height: 150px;
-            top: 680px;
+            top: 600px;
             left:  -20px;
             animation: float2 6s ease-in-out infinite;
         }
@@ -141,11 +139,10 @@
 
         /*Neon Pagedoll*/
         .neonCenter {
-            width: 550px;
-            height: 750px;
+            width: 470px;
             position: relative;
-            top: 15px;
-            left: 100px;
+            top: 10px;
+            left: 140px;
             z-index: 4;
             animation: pulse2 4s ease-in-out infinite;
         }
@@ -156,10 +153,11 @@
         }
 
         .neonCenterBG {
+            width: 550px;
             z-index: 0;
             position: absolute;
-            top: 20px;
-            left: 50px;
+            top: 90px;
+            left: 100px;
             filter: opacity(10%);
             animation: rainbow2 50s linear infinite;
         }
@@ -182,44 +180,6 @@
             table.neoTable tr:nth-child(even) {
             background: #2525259a;
             }
-
-
-        /*ANIMATIONS*/
-        @keyframes rainbow {
-            0% {filter: blur(10px) hue-rotate(0deg);}
-            50% {filter: blur(15px) hue-rotate(2880deg);}
-            100% {filter: blur(10px) hue-rotate(0deg);}
-        }
-
-        @keyframes rainbow2 {
-            0% {filter: opacity(10%) blur(0px) hue-rotate(0deg);}
-            50% {filter: opacity(15%) blur(5px) hue-rotate(2880deg);}
-            100% {filter: opacity(10%) blur(0px) hue-rotate(0deg);}
-        }
-
-        @keyframes float1 {
-            0% {transform: translate(0px, 10px); filter: drop-shadow(0px 8px 2px #00000055);}
-            50% {transform: translate(0px, -10px); filter: drop-shadow(0px 20px 6px #00000055);}
-            100% {transform: translate(0px, 10px); filter: drop-shadow(0px 8px 2px #00000055);}
-        }
-
-        @keyframes float2 {
-            0% {transform: translate(0px, 5px); filter: drop-shadow(0px 8px 2px #00000055);}
-            50% {transform: translate(0px, -5px); filter: drop-shadow(0px 20px 6px #00000055);}
-            100% {transform: translate(0px, 5px); filter: drop-shadow(0px 8px 2px #00000055);}
-        }
-        
-        @keyframes pulse {
-            0%   {transform: scale(1);}
-            50%  {transform: scale(0.95);}
-            100% {transform: scale(1);}
-        }
-
-        @keyframes pulse2 {
-        0%   {transform: rotate(-3deg) translate(0px, 0px);}
-        50%  {transform: rotate(2deg) translate(0px, 8px);}
-        100% {transform: rotate(-3deg) translate(0px, 0px);}
-        }
     </style>
 </head>
 
@@ -267,7 +227,7 @@
 
                     <div class="sticker"
                     style="top: 240px; 
-                    right: 120px; width: 200px; 
+                    right: 140px; width: 200px; 
                     animation: pulse 4s ease-in-out infinite">
                         <img style="transform: rotate(5deg);" src="ying-yang.webp">
                     </div>
