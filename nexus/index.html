@@ -8,6 +8,131 @@
     <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.webp" />
     <link href="nexus.css" rel="stylesheet" type="text/css" media="all" />
+
+    <style>
+        :root {
+            --window1-top: 0px;
+            --window1-left: 0px;
+            --window1-width: 12%;
+            --window1-height: 100vh;
+
+            --window2-top: 1%;
+            --window2-left: 13%;
+            --window2-width: 85.7%;
+            --window2-height: 93%;
+        }
+
+        #window1 {
+            top: var(--window1-top);
+            left: var(--window1-left);
+            width: var(--window1-width);
+            height: var(--window1-height);
+        }
+
+        #window2 {
+            top: var(--window2-top);
+            left: var(--window2-left);
+            width: var(--window2-width);
+            height: var(--window2-height);
+        }
+        /*-----*/
+
+        /*the basic stuff*/
+        body {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 255, 1) 100%);
+            height: 100vh;
+            margin: 0;
+            font-size: 15pt;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 2px;
+        }
+
+        /*the basic stuff [END]*/
+
+        /*windows, this is the real meat and potatos of this stylesheet*/
+        .window {
+            position: absolute;
+            box-sizing: border-box;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            border: none;
+        }
+
+        .window-header {
+            background-color: #1E1E1E;
+            color: white;
+            padding: 5px;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .window-content {
+            background-color: #000000;
+            flex-grow: 1;
+            padding: 10px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*window styling*/
+        #window1 {
+            border-right: 1px solid white;
+        }
+
+        #window2 {
+            padding: 0;
+            border: 1px solid white;
+        }
+
+        #window2 .window-content {
+            padding: 0;
+        }
+        /*windows [END]*/
+
+        /*bottom menu bar stuff*/
+        #bar {
+            background: #e9e9e9;
+            width: 100%;
+            height: 35px;
+            color: #000;
+            padding: 5px;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            font-size: 12pt;
+        }
+
+        /* bar button */
+        button {
+            border: none;
+            cursor: pointer;
+            background: #b8b8b8;
+            border-radius: 2px;
+        }
+
+        button:hover {
+            filter: brightness(70%);
+        }
+    </style>
 </head>
 
 <body>
@@ -42,7 +167,7 @@
                 <details open="">
                     <summary>Specialized Subjects</summary>
                     <ul>
-                        <li><a href="" class="tag">Paleontology</a></li>
+                        <li><a href="paleo.html" target="iframe2" class="tag">Paleontology</a></li>
                         <li><a href="" class="tag">Computing</a></li>
                     </ul>
                 </details>
