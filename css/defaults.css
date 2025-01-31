@@ -61,6 +61,7 @@ body.lang-jp h3 {
 body.lang-jp h4 {
   font-size: 10pt;
 }
+
 /*fonts - END*/
 
 /*basic stylings*/
@@ -114,6 +115,7 @@ textarea,
 select {
   font: inherit;
 }
+
 /*basic styling - END*/
 
 /*utility classes*/
@@ -180,6 +182,7 @@ select {
   /* Internet Explorer/Edge */
   user-select: none;
 }
+
 /*utility classes - END*/
 
 /*tree-styled lists*/
@@ -259,105 +262,139 @@ select {
 .tree details[open]>summary::before {
   background-position: calc(-2 * var(--radius)) 0;
 }
+
 /*tree-styled lists - END*/
 
 
-        /*tags and text*/
-        .tag {
-          padding: 2px;
-          color: #000;
-          text-decoration: none;
-        }
+/*tags and text*/
+.tag {
+  padding: 2px;
+  color: #000;
+  text-decoration: none;
+}
 
-        .red {
-          background: red;
-        }
+.red {
+  background: red;
+}
 
-        .orange {
-          background: orange;
-        }
+.orange {
+  background: orange;
+}
 
-        .yellow {
-          background: yellow;
-        }
+.yellow {
+  background: yellow;
+}
 
-        .lime {
-          background: lime;
-        }
+.lime {
+  background: lime;
+}
 
-        .cyan {
-          background: cyan;
-        }
+.cyan {
+  background: cyan;
+}
 
-        .blue {
-          background: blue;
-        }
+.blue {
+  background: blue;
+}
 
-        .pink {
-          background: magenta;
-        }
+.pink {
+  background: magenta;
+}
 
-        .purple {
-          background: purple;
-        }
+.purple {
+  background: purple;
+}
 
-        .blacktext {
-          color: black;
-        }
+.blacktext {
+  color: black;
+}
 
-        .text-cyan {
-          color: cyan;
-        }
+.text-cyan {
+  color: cyan;
+}
 
-        /*animations*/
-        @keyframes bounce {
-          0% {scale: 1 1;}
-          10% {scale: 0.8 1.1;}
-          40% {scale: 1.1 0.9;}
-          100% {scale: 1 1;}
-        }
+/*rainbow text*/
+.rainbowtext_static {
+  text-shadow: 1px -3px var(--text);
+  background: linear-gradient(to right, #9e3735, #865062, #352552, #0f4672, #125963, #275c29, #60661b, #8b5d13, #752810);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-        @keyframes FadeIn {
-          0% {opacity: 0;}
-          100% {opacity: 1;}
-        }
+.rainbowtext_animated {
+  text-shadow: 3px 2px 1px white;
+  background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, yellow, #ff3399, #6666ff);
+  background-size: auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: LSD 30s ease-in-out infinite;
+  background-size: 400% 100%;
+}
 
-        @keyframes FlyIn {
-          0% {transform: translateY(-2em);}
-        }
+.LSDtext {
+  background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, yellow, #ff3399, #6666ff);
+  background-size: auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: LSD 30s ease-in-out infinite;
+  background-size: 400% 100%;
+}
 
-        @keyframes rainbow {
-          0% {filter: blur(10px) hue-rotate(0deg);}
-          50% {filter: blur(15px) hue-rotate(2880deg);}
-          100% {filter: blur(10px) hue-rotate(0deg);}
-      }
 
-      @keyframes rainbow2 {
-          0% {filter: opacity(10%) blur(0px) hue-rotate(0deg);}
-          50% {filter: opacity(15%) blur(5px) hue-rotate(2880deg);}
-          100% {filter: opacity(10%) blur(0px) hue-rotate(0deg);}
-      }
+/*animations*/
+@keyframes bounce {
+  0% {scale: 1 1;}
+  10% {scale: 0.8 1.1;}
+  40% {scale: 1.1 0.9;}
+  100% {scale: 1 1;}
+}
 
-      @keyframes float1 {
-          0% {transform: translate(0px, 10px); filter: drop-shadow(0px 8px 2px #00000055);}
-          50% {transform: translate(0px, -10px); filter: drop-shadow(0px 20px 6px #00000055);}
-          100% {transform: translate(0px, 10px); filter: drop-shadow(0px 8px 2px #00000055);}
-      }
+@keyframes FadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
 
-      @keyframes float2 {
-          0% {transform: translate(0px, 5px); filter: drop-shadow(0px 8px 2px #00000055);}
-          50% {transform: translate(0px, -5px); filter: drop-shadow(0px 20px 6px #00000055);}
-          100% {transform: translate(0px, 5px); filter: drop-shadow(0px 8px 2px #00000055);}
-      }
-      
-      @keyframes pulse {
-          0%   {transform: scale(1);}
-          50%  {transform: scale(0.95);}
-          100% {transform: scale(1);}
-      }
+@keyframes FlyIn {
+  0% {transform: translateY(-2em);}
+}
 
-      @keyframes pulse2 {
-      0%   {transform: rotate(-3deg) translate(0px, 0px);}
-      50%  {transform: rotate(2deg) translate(0px, 8px);}
-      100% {transform: rotate(-3deg) translate(0px, 0px);}
-      }
+@keyframes rainbow {
+  0% {filter: blur(10px) hue-rotate(0deg);}
+  50% {filter: blur(15px) hue-rotate(2880deg);}
+  100% {filter: blur(10px) hue-rotate(0deg);}
+}
+
+@keyframes rainbow2 {
+  0% {filter: opacity(10%) blur(0px) hue-rotate(0deg);}
+  50% {filter: opacity(15%) blur(5px) hue-rotate(2880deg);}
+  100% {filter: opacity(10%) blur(0px) hue-rotate(0deg);}
+}
+
+@keyframes float1 {
+  0% {transform: translate(0px, 10px); filter: drop-shadow(0px 8px 2px #00000055);}
+  50% {transform: translate(0px, -10px); filter: drop-shadow(0px 20px 6px #00000055);}
+  100% {transform: translate(0px, 10px); filter: drop-shadow(0px 8px 2px #00000055);}
+}
+
+@keyframes float2 {
+  0% {transform: translate(0px, 5px); filter: drop-shadow(0px 8px 2px #00000055);}
+  50% {transform: translate(0px, -5px); filter: drop-shadow(0px 20px 6px #00000055);}
+  100% {transform: translate(0px, 5px); filter: drop-shadow(0px 8px 2px #00000055);}
+}
+
+@keyframes pulse {
+  0%   {transform: scale(1);}
+  50%  {transform: scale(0.95);}
+  100% {transform: scale(1);}
+}
+
+@keyframes pulse2 {
+0%   {transform: rotate(-3deg) translate(0px, 0px);}
+50%  {transform: rotate(2deg) translate(0px, 8px);}
+100% {transform: rotate(-3deg) translate(0px, 0px);}
+}
