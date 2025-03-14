@@ -1,1 +1,289 @@
-body{background:#000;background-repeat:no-repeat;background-size:100%;color:#cecece;width:100%;animation:.3s ease-in FadeIn}body.inactive{overflow:hidden}#wrapper{margin:0 auto;width:1200px}#section1{position:relative;width:1200px}#menu{bottom:0;height:680px;left:87px;position:absolute;width:680px;z-index:120}.sidebar{position:absolute;bottom:0;left:-1px;width:680px}.sidebar img{width:100%}.about{left:27px;position:absolute;top:90px;width:140px}.blog{left:175px;position:absolute;top:90px;width:223px}.art{left:405px;position:absolute;top:90px;width:270px}.more{left:140px;position:absolute;top:302px;width:540px}.button{filter:grayscale(100%);transition:filter .2s;z-index:110}.button img{width:100%}.button:hover{filter:grayscale(0%) hue-rotate(360deg)}.charpixel{display:flex;flex-direction:row;z-index:110;position:absolute;top:-72px;left:10px;gap:5px;align-items:baseline;filter:grayscale(100%)}.charpixel img:hover{animation:bounce .2s linear}.menu{width:25%;position:absolute;right:0px;bottom:25px;display:flex;flex-direction:column;gap:5px}.menu a{text-decoration:none}.menu .item{background-color:#000;border:1px solid #fff;border-right:none;border-bottom-left-radius:5px;border-top-left-radius:10px;padding:5px;padding-left:1em;color:#fff;transition:background-color .1s,transform .1s;display:flex;align-items:center;font-family:"IBM-DOS"}.menu .item:hover{transform:translateX(-50px)}.menu .itemtext{font-size:12px}.menu::after{content:".";background:#000;color:#000;position:absolute;right:-1px;width:29.5%;height:100%}.popup{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.836);backdrop-filter:blur(15px);color:#fff;display:flex;align-items:center;justify-content:center;transform:scale(0, 0)}.popup .popup-content{width:50%;height:70%;background:#000;border:1px solid #fff;padding:5px;position:relative}.popup .popup-content iframe{width:100%;height:100%;border:none}.popup:target{transform:scale(1, 1);z-index:999}.close{position:absolute;top:0;left:10px;text-decoration:none;display:flex;align-items:center;justify-content:center}.close::after{content:"x";color:#fff;font-size:20px}#header{background:linear-gradient(360deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4784313725)),url(/assets/index/top.webp);height:200px}#middle1{background:url(/assets/index/middle1.webp);height:300px}#middle2{background:url(/assets/index/middle2.webp);min-height:calc(100vh - 700px)}#bottom{background:linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4784313725)),url(/assets/index/bottom.webp);height:200px}#section2{background:#000;height:100vh;padding:1em}#section2 .header{font-family:"IBM-BIOS";font-size:13px}#section2 .main{width:80%;margin:0 auto;padding:1em}#section2 .main .box{border:1px solid #fff;padding:1em;height:100%;width:100%}#section2 .main .box textarea{background:#111;border:1px solid #373737;border-radius:2px;color:#baff1b;padding:1em;width:100%}#section2 .main .box iframe{width:100%;height:100%;border:none}#section2 .parent{display:flex;gap:10px}#section2 .div1{width:45%}#section2 .div2{width:70%;margin-left:20px}#section2 .div2 .link{z-index:500;position:relative;top:20px}#section2 .div2 .link .text{position:absolute;font-family:"IBM-DOS";font-size:10pt;z-index:600;padding:5px;top:50px;left:5px;width:35.7%;height:225px;color:#000;overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}#section2 .div2 .link .link-back-buttons{display:flex;flex-direction:column;justify-content:center;width:100%;padding:1em}#section2 .div2 .text::webkit-scrollbar{display:none}#section2 .div2 .entry{padding:10px;width:50%}#section2 .div2 .button{display:flex;justify-content:center;padding:15px}#section2 .div2 .button img{width:100px}#section2 .div3{width:100%;margin-top:2em;border:1px solid #fff}#section2 .construction{padding:2em;display:flex;flex-direction:column;justify-content:center;align-items:center}#section2 .construction img{width:80px;filter:grayscale(100%)}
+body {
+    background: #000;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #cecece;
+    width: 100%;
+    animation: .3s ease-in FadeIn
+}
+
+body.inactive {
+    overflow: hidden
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 1200px
+}
+
+#section1 {
+    position: relative;
+    width: 1200px
+}
+
+#menu {
+    bottom: 0;
+    height: 680px;
+    left: 87px;
+    position: absolute;
+    width: 680px;
+    z-index: 120
+}
+
+.sidebar {
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    width: 680px
+}
+
+.sidebar img {
+    width: 100%
+}
+
+.about {
+    left: 27px;
+    position: absolute;
+    top: 90px;
+    width: 140px
+}
+
+.blog {
+    left: 175px;
+    position: absolute;
+    top: 90px;
+    width: 223px
+}
+
+.art {
+    left: 405px;
+    position: absolute;
+    top: 90px;
+    width: 270px
+}
+
+.more {
+    left: 140px;
+    position: absolute;
+    top: 302px;
+    width: 540px
+}
+
+.button {
+    filter: grayscale(100%);
+    transition: filter .2s;
+    z-index: 110
+}
+
+.button img {
+    width: 100%
+}
+
+.button:hover {
+    filter: grayscale(0%) hue-rotate(360deg)
+}
+
+.charpixel {
+    display: flex;
+    flex-direction: row;
+    z-index: 110;
+    position: absolute;
+    top: -72px;
+    left: 10px;
+    gap: 5px;
+    align-items: baseline;
+    filter: grayscale(100%)
+}
+
+.charpixel img:hover {
+    animation: bounce .2s linear
+}
+
+.menu {
+    width: 25%;
+    position: absolute;
+    right: 0px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+
+.menu a {
+    text-decoration: none
+}
+
+.menu .item {
+    background-color: #000;
+    border: 1px solid #fff;
+    border-right: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 10px;
+    padding: 5px;
+    padding-left: 1em;
+    color: #fff;
+    transition: background-color .1s, transform .1s;
+    display: flex;
+    align-items: center;
+    font-family: "IBM-DOS"
+}
+
+.menu .item:hover {
+    transform: translateX(-50px)
+}
+
+.menu .itemtext {
+    font-size: 12px
+}
+
+.menu::after {
+    content: ".";
+    background: #000;
+    color: #000;
+    position: absolute;
+    right: -1px;
+    width: 29.5%;
+    height: 100%
+}
+
+
+#header {
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4784313725)), url(/assets/index/top.webp);
+    height: 200px
+}
+
+#middle1 {
+    background: url(/assets/index/middle1.webp);
+    height: 300px
+}
+
+#middle2 {
+    background: url(/assets/index/middle2.webp);
+    min-height: calc(100vh - 700px)
+}
+
+#bottom {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4784313725)), url(/assets/index/bottom.webp);
+    height: 200px
+}
+
+#section2 {
+    background: #000;
+    height: 100vh;
+    padding: 1em
+}
+
+#section2 .header {
+    font-family: "IBM-BIOS";
+    font-size: 13px
+}
+
+#section2 .main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em
+}
+
+#section2 .main .box {
+    border: 1px solid #fff;
+    padding: 1em;
+    height: 100%;
+    width: 100%
+}
+
+#section2 .main .box textarea {
+    background: #111;
+    border: 1px solid #373737;
+    border-radius: 2px;
+    color: #baff1b;
+    padding: 1em;
+    width: 100%
+}
+
+#section2 .main .box iframe {
+    width: 100%;
+    height: 100%;
+    border: none
+}
+
+#section2 .parent {
+    display: flex;
+    gap: 10px
+}
+
+#section2 .div1 {
+    width: 45%
+}
+
+#section2 .div2 {
+    width: 70%;
+    margin-left: 20px
+}
+
+#section2 .div2 .link {
+    z-index: 500;
+    position: relative;
+    top: 20px
+}
+
+#section2 .div2 .link .text {
+    position: absolute;
+    font-family: "IBM-DOS";
+    font-size: 10pt;
+    z-index: 600;
+    padding: 5px;
+    top: 50px;
+    left: 5px;
+    width: 35.7%;
+    height: 225px;
+    color: #000;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none
+}
+
+#section2 .div2 .link .link-back-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 1em
+}
+
+#section2 .div2 .text::webkit-scrollbar {
+    display: none
+}
+
+#section2 .div2 .entry {
+    padding: 10px;
+    width: 50%
+}
+
+#section2 .div2 .button {
+    display: flex;
+    justify-content: center;
+    padding: 15px
+}
+
+#section2 .div2 .button img {
+    width: 100px
+}
+
+#section2 .div3 {
+    width: 100%;
+    margin-top: 2em;
+    border: 1px solid #fff
+}
+
+#section2 .construction {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+#section2 .construction img {
+    width: 80px;
+    filter: grayscale(100%)
+}

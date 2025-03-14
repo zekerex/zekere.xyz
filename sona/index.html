@@ -16,523 +16,164 @@
             --base_accent: #d3d3d3;
         }
 
-
+        /*basic stuff*/
         body {
             background:
-                linear-gradient(180deg, #000000 5%, #00ffea00) fixed,
+                linear-gradient(180deg, #000000 30%, #00ffea00) fixed,
                 url("/assets/sona/bg.webp") fixed;
             color: var(--base_accent);
-            font-size: 12pt;
             animation: rainbow 100s linear infinite;
         }
 
         a {
             color: var(--accent);
         }
+        /*----*/
 
-        .divider {
-            padding-top: 5px;
-            padding-bottom: 5px;
-        }
-
-        .wrapper {
+        /*main layout*/
+        #wrapper {
+            background: linear-gradient(0deg, #000000e7 5%, #00000081 100%);
+            min-height: 100vh;
             justify-content: center;
+            align-items: center;
             display: flex;
-            background: #000000e1;
         }
 
         #main {
-            background: #000;
-            width: 70%;
-            border: 4px solid transparent;
-            border-bottom: none;
-            border-top: none;
-            padding: 2em;
-            -o-border-image: url("/assets/sona/rgb/border2.webp") 6;
-            border-image: url("/assets/sona/rgb/border2.webp") 6;
-            background-clip: border-box;
-            background-clip: padding-box;
-        }
-
-
-        .entry {
+            width: 55vw;
             display: flex;
-            flex-direction: row;
+            gap: 2dvb;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            padding: 1em;
-        }
-
-        .entry .profile-image img:hover {
-            filter: brightness(120%);
-        }
-
-        .desc {
-            border: 5px outset var(--accent);
-            background: var(--base);
-            padding: 7px;
-            width: 80%;
 
         }
 
-        .R {
-            margin-right: 2em;
-        }
-
-        .L {
-            margin-left: 2em;
-            -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-            -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-            box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.541);
-        }
-
-        .desc .text {
-            background: var(--base);
-            border: 1px solid var(--base_accent);
-            padding: 1em;
-            margin-top: 7px;
-        }
-
-        .desc .text::-webkit-scrollbar {
-            display: none;
-        }
-
-        .desc p {
-            padding: 5px;
-        }
-
-        .sm {
-            font-size: 9pt;
-        }
-
-        .accent {
-            color: var(--accent)
-        }
-
-        div.table {
-            background-color: var(--base);
-            width: 100%;
-            text-align: left;
-            border-collapse: collapse;
-        }
-
-        .divTable.table .divTableCell,
-        .divTable.table .divTableHead {
-            border: 1px solid var(--base_accent);
-            padding: 4px 5px;
-        }
-
-        /*.divTable.table .divTableBody .divTableCell {
-  font-size: 10pt;
-}*/
-        .divTable.table .divTableRow:nth-child(even) {
-            background: var(--base);
-        }
-
-        .divTable.table .divTableCell:nth-child(even) {
-            background: var(--base);
-        }
-
-        .table.outerTableFooter {
-            border-top: none;
-        }
-
-        .table.outerTableFooter .tableFootStyle {
-            padding: 3px 5px;
-        }
-
-        /* DivTable.com */
-        .divTable {
-            display: table;
-        }
-
-        .divTableRow {
-            display: table-row;
-        }
-
-        .divTableHeading {
-            display: table-header-group;
-        }
-
-        .divTableCell,
-        .divTableHead {
-            display: table-cell;
-        }
-
-        .divTableHeading {
-            display: table-header-group;
-        }
-
-        .divTableFoot {
-            display: table-footer-group;
-        }
-
-        .divTableBody {
-            display: table-row-group;
-        }
-
-        .nav {
+        #nav {
             top: 0;
             right: 0;
             position: fixed;
+            font-size: 2dvb;
             padding: 1em;
-            text-align: right;
             z-index: 100;
-            width: 300px;
+            width: fit-content;
+            background: var(--base);
+            border-bottom-left-radius: 1em;
         }
 
-        .nav a {
+        #nav a {
             display: block;
         }
+        /*----*/
 
-        hr {
-            border: 1px solid #fff;
-            border-bottom: none;
+        /*character icons*/
+        .char {
+            width: 12vw;
+            border: ridge .4dvb;
+            background: #fff; /*default border colour*/
+            box-shadow: #000 5px 0px 10px 3px;
+            animation: float2 2s ease-in-out infinite;
         }
 
-        .popup {
-
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgb(0, 0, 0);
-            transform: scale(0, 0);
+        .char img {
+            width: 100%;
         }
 
-        .popup:target {
-            transform: scale(1, 1);
-            z-index: 999;
+        .char img:hover {
+            filter: brightness(60%);
         }
-
-        .popup-content {
-            padding: 5em;
-        }
-
-        .popup-content p {
-            padding: 10px;
-            line-height: 18px;
-        }
-
-
-        .close {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 5px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid var(--accent);
-            border-radius: 2px;
-        }
-
-        .close::after {
-            content: 'close';
-            color: white;
-            font-weight: 700;
-        }
+        /*----*/
 
         /*animations */
+        /*this is the main background animation, specific to only 
+        this page, at least for now.*/
         @keyframes rainbow {
-            from {
+            0%, 100% {
                 background-position: 0 0;
-                backdrop-filter: saturate(0.8) brightness(20) contrast(3) hue-rotate(0deg);
+                backdrop-filter: saturate(0.8) blur(8px) brightness(20) contrast(3) hue-rotate(0deg);
             }
 
-            to {
+            50% {
                 background-position: 100% 400%;
-                backdrop-filter: saturate(0.8) brightness(20) contrast(3) hue-rotate(2880deg);
+                backdrop-filter: saturate(0.8) blur(6px) brightness(20) contrast(3) hue-rotate(2880deg);
             }
         }
+        /*----*/
 
         /*sizing compatability*/
-        @media screen and (max-width: 1500px) { 
-            #main {
-                width: 90%;
-            }
+
+        @media screen and (max-width: 750px) {
+            #main {width: 100vw;}
+            .char {width: 20vw;}
         }
     </style>
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <div class="nav">
+    <div id="wrapper">
+        <div id="nav">
             <a href="/about.html">BACK</a>
         </div>
 
 
         <div id="main">
-
-            <!--radiation-->
-            <div class="entry" alt="RADIATION">
-
-                <div class="desc R">
-                    <div class="divTable table">
-                        <div class="divTableBody">
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Name</span>:</div>
-                                <div class="divTableCell">Radiation Duplex</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">AKA</span>:</div>
-                                <div class="divTableCell">Neon Duplex (alternative name)</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Species</span>:</div>
-                                <div class="divTableCell">Chimera Dragon; shapeshifter
-                                </div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Pronouns</span>:</div>
-                                <div class="divTableCell">Any</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Created</span>:</div>
-                                <div class="divTableCell">2014</div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="text">
-                        <p>A shapeshifting entity that manifested into this realm with no rhyme or reason; made out
-                            of
-                            the
-                            cosmic fluid of the previous dead universe.</p>
-                    </div>
+            <a href="/sona/neon/index.html"><div class="char" style="color: cyan; background: rgb(19, 124, 114);">
+                <div class="tooltip">
+                    <div class="tooltiptext">NEON</div>
+                    <img src="/assets/sona/neo.webp" alt="neo">
                 </div>
+            </div></a>
+                        
+            <div class="char" style="color: blue; background: linear-gradient(180deg, blue, black 70%);
+            animation-delay: .1s">
+            <div class="tooltip">
+                <div class="tooltiptext">RK-0</div>
+                <img src="/assets/sona/RK-0.webp" alt="RK-0">
+            </div>
+            </div>
 
-                <div class="profile-image">
-                    <a href="/sona/neon/index.html"><img src="/assets/sona/NEON.webp" style="width: 270px;"></a>
+            <div class="char" style="background: url(/sona/neon/neonBG1.webp); animation-delay: .2s">
+                <div class="tooltip">
+                    <div class="tooltiptext">TERMINAL</div>
+                    <img src="/assets/sona/TERMINAL.webp" alt="TERMINAL">
                 </div>
             </div>
-            <!--radiation-->
 
-
-            <!--rgb-->
-            <div class="entry" alt="RGB">
-                <div class="profile-image" style="width: 350px;">
-                    <a href="/sona/RGB.html"><img src="/assets/sona/RGB.webp"></a>
-                </div>
-
-                <div class="desc L">
-                    <div class="divTable table">
-                        <div class="divTableBody">
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Name</span>:</div>
-                                <div class="divTableCell">RGB</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Species</span>:</div>
-                                <div class="divTableCell">Phylygil
-                                </div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Pronouns</span>:</div>
-                                <div class="divTableCell">Any</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Created</span>:</div>
-                                <div class="divTableCell">2018</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text">
-                        <p>They come from a planet called <a href="/hyglick/index.html">Hyglick</a>, which has a
-                            reputation for being a rather unstable planet where anarchy thrives. It's also inhabited
-                            by rather peculiar beings, rich with an esoteric web of languages that has rather disjointed
-                            and flowery grammar.</p>
-                        </p>
-
-                        <p>RGB wanders around the deserted lands of Hyglick with a laptop horribly cobbled together with
-                            spare electronic parts. It has a mini-satilite that can acess the web, though it's
-                            rather slow (dial-up levels of speed). They live rather freely and would love to talk to you
-                            about random, obscure computer games, probably.</p>
-                    </div>
+            <div class="char" style="background: url(/assets/graphics/bg/colourful.crackle.gif); animation-delay: .3s;">
+                <div class="tooltip">
+                    <div class="tooltiptext">INTRAMATRIX</div>
+                    <img src="/assets/sona/intramatrix.webp" alt="INTRAMATRIX">
                 </div>
             </div>
-            <!--rgb-->
 
-            <!--skrill-->
-            <div class="entry" alt="SKRILL">
+            <a href="/sona/RGB.html"><div class="char" style="color: yellow; background: url(/assets/graphics/crystals.webp); 
+            background-size: cover;">
+            <div class="tooltip">
+                <div class="tooltiptext">RGB</div>
+                <img src="/assets/sona/RGB.webp" alt="RGB">
+            </div>
+            </div></a>
 
-                <div class="desc R">
-                    <div class="divTable table">
-                        <div class="divTableBody">
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Name</span>:</div>
-                                <div class="divTableCell">Skrill Dubspectrum</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Species</span>:</div>
-                                <div class="divTableCell">Blixoid
-                                </div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Pronouns</span>:</div>
-                                <div class="divTableCell">Xe / They / It</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Created</span>:</div>
-                                <div class="divTableCell">2021</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text">
-                        <p><i>loud, bold, impulsive, boisterous</i></p>
-                        <p>Xe's a party animal who loves to entertain. Sometimes, they can be a bit too much for others,
-                            and
-                            has trouble keeping themselves, "low key."</p>
-                    </div>
-                </div>
-
-                <div class="profile-image" style="width: 600px;">
-                    <img src="/assets/sona/SKRILL.webp">
+            <div class="char" style="animation-delay: .2s">
+                <div class="tooltip">
+                    <div class="tooltiptext">JIGSAW</div>
+                    <img src="/assets/sona/JIGSAW.webp" alt="JIGSAW">
                 </div>
             </div>
-            <!--skrill-->
 
-
-            <!--jigsaw-->
-            <div class="entry" alt="JIGSAW">
-                <div class="profile-image">
-                    <img src="/assets/sona/JIGSAW.webp">
-                </div>
-
-                <div class="desc L">
-                    <div class="divTable table">
-                        <div class="divTableBody">
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Name</span>:</div>
-                                <div class="divTableCell">Jigsaw</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Species</span>:</div>
-                                <div class="divTableCell">Telegen
-                                </div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Pronouns</span>:</div>
-                                <div class="divTableCell">They / It</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Created</span>:</div>
-                                <div class="divTableCell">2023</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text">
-                        <p>The musicmaker; They like to explore every aspect of electronic sound.</p>
-                    </div>
+            <div class="char" style="color: red; animation-delay: .3s">
+                <div class="tooltip">
+                    <div class="tooltiptext">VENDETTA</div>
+                    <img src="/assets/sona/vendetta.webp" alt="vendetta">
                 </div>
             </div>
-            <!--jigsaw-->
-
-            <!--vendetta-->
-            <div class="entry" alt="VENDETTA">
-
-
-                <div class="desc R">
-                    <div class="divTable table">
-                        <div class="divTableBody">
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Name</span>:</div>
-                                <div class="divTableCell">Vendetta "Ven" Chitsuki</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Species</span>:</div>
-                                <div class="divTableCell">some kind of bird thing
-                                </div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Pronouns</span>:</div>
-                                <div class="divTableCell">He / They</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Created</span>:</div>
-                                <div class="divTableCell">2022</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Friend(s)</span>:</div>
-                                <div class="divTableCell">RGB</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text">
-                        <p>Vendetta often confuses his imagination for reality. How he sees the world is
-                            very different compared to the average person.</p>
-
-                        <p>He seems to be in a constant state of dreaming- even when his eyes are clearly open. He sees
-                            higher planes of existence that many others cannot see- beings and monsters that communicate
-                            in glyphs, towers made out of eyes, and so on...</p>
-
-                    </div>
-                </div>
-
-                <div class="profile-image" style="width: 230px;">
-                    <img src="/assets/sona/VEN.webp">
+                        
+            <div class="char" style="color: blueviolet; animation-delay: .4s">
+                <div class="tooltip">
+                    <div class="tooltiptext">SKRILL</div>
+                    <img src="/assets/sona/skrill.webp" alt="skrill">
                 </div>
             </div>
-            <!--vendetta-->
-
-            <!--intramatrix, who is a work in progress
-            <div class="entry" alt="VENDETTA">
-
-
-                <div class="desc R">
-                    <div class="divTable table">
-                        <div class="divTableBody">
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Name</span>:</div>
-                                <div class="divTableCell">INTRAMATRIX</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Species</span>:</div>
-                                <div class="divTableCell">Living computer virus...?
-                                </div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Pronouns</span>:</div>
-                                <div class="divTableCell">Any</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Created</span>:</div>
-                                <div class="divTableCell">2022 (concept); 2024 (design)</div>
-                            </div>
-                            <div class="divTableRow">
-                                <div class="divTableCell b"><span class="accent">Friend(s)</span>:</div>
-                                <div class="divTableCell">RGB, Jigsaw, Omogen</div>
-                            </div>
-                        </div>
-                    </div>
-
-                
-                
-                <div class="text">
-                        <p>INTRAMATRIX used to be a “normal,” person before being transformed into the thing they are
-                            now through various stages of experimentation.</p>
-
-                        <p>They have a chaotic, uncontrollable personality; bursting with energy and 
-                            concocting various out-there ideas. Simultaneously, almost paradoxically, they can react
-                            very logically to some things much like a computer, so they are constantly flip-flopping
-                            between nonsense and logic.</p>
-
-                    </div>
-                </div>
-
-                <div class="profile-image">
-
-                </div>
-            </div>
-            intramatrix-->
 
         </div>
     </div>

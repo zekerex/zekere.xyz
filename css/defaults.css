@@ -16,52 +16,10 @@
 
 body {
   font-family: "DOS-V";
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
-
-body.lang-en {
-  font-family: "DOS-V";
-  line-height: 1.4;
-}
-
-body.lang-jp {
-  font-size: 18px;
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
-  line-height: 1.6;
-}
-
-body.lang-en h1,
-body.lang-en h2,
-body.lang-en h3,
-body.lang-en h4 {
-  font-weight: bold;
-  font-family: "PixelCaps!";
-  letter-spacing: 2px;
-}
-
-body.lang-jp h1,
-body.lang-jp h2,
-body.lang-jp h3,
-body.lang-jp h4 {
-  letter-spacing: 0.05em;
-  font-family: "Madou";
-}
-
-body.lang-jp h1 {
-  font-size: 16pt;
-}
-
-body.lang-jp h2 {
-  font-size: 14pt;
-}
-
-body.lang-jp h3 {
-  font-size: 12pt;
-}
-
-body.lang-jp h4 {
-  font-size: 10pt;
-}
-
 /*fonts - END*/
 
 /*basic stylings*/
@@ -91,12 +49,6 @@ ol[role=list] {
 
 html:focus-within {
   scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
 }
 
 a:not([class]) {
@@ -184,6 +136,88 @@ select {
 }
 
 /*utility classes - END*/
+
+/*popups*/
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .836);
+  backdrop-filter: blur(15px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0, 0)
+}
+
+.popup .popup-content {
+  width: 50%;
+  height: 70%;
+  background: #000;
+  border: 1px solid #fff;
+  padding: 5px;
+  position: relative
+}
+
+.popup .popup-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none
+}
+
+.popup:target {
+  transform: scale(1, 1);
+  z-index: 999
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.close::after {
+  content: "x";
+  color: #fff;
+  font-size: 20px
+}
+
+
+/*tooltips*/
+.tooltip {
+  position: relative;
+  }
+
+  .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: var(--base_accent);
+  border: 3px ridge var(--base_accent);
+  text-align: center;
+  padding: 5px 0;
+
+  position: absolute;
+  z-index: 1;
+  }
+
+  .tooltip:hover .tooltiptext {
+  visibility: visible;
+  }
+
+  .tooltip .tooltiptext {
+  width: 120px;
+  bottom: 110%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+  }
 
 /*tree-styled lists*/
 .tree {
@@ -345,7 +379,6 @@ select {
   background-size: 400% 100%;
 }
 
-
 /*animations*/
 @keyframes bounce {
   0% {scale: 1 1;}
@@ -364,37 +397,31 @@ select {
 }
 
 @keyframes rainbow {
-  0% {filter: blur(10px) hue-rotate(0deg);}
+  0%, 100% {filter: blur(10px) hue-rotate(0deg);}
   50% {filter: blur(15px) hue-rotate(2880deg);}
-  100% {filter: blur(10px) hue-rotate(0deg);}
 }
 
 @keyframes rainbow2 {
-  0% {filter: opacity(10%) blur(0px) hue-rotate(0deg);}
+  0%, 100% {filter: opacity(10%) blur(0px) hue-rotate(0deg);}
   50% {filter: opacity(15%) blur(5px) hue-rotate(2880deg);}
-  100% {filter: opacity(10%) blur(0px) hue-rotate(0deg);}
 }
 
 @keyframes float1 {
-  0% {transform: translate(0px, 10px); filter: drop-shadow(0px 8px 2px #00000055);}
+  0%, 100% {transform: translate(0px, 10px); filter: drop-shadow(0px 8px 2px #00000055);}
   50% {transform: translate(0px, -10px); filter: drop-shadow(0px 20px 6px #00000055);}
-  100% {transform: translate(0px, 10px); filter: drop-shadow(0px 8px 2px #00000055);}
 }
 
 @keyframes float2 {
-  0% {transform: translate(0px, 5px); filter: drop-shadow(0px 8px 2px #00000055);}
+  0%, 100% {transform: translate(0px, 5px); filter: drop-shadow(0px 8px 2px #00000055);}
   50% {transform: translate(0px, -5px); filter: drop-shadow(0px 20px 6px #00000055);}
-  100% {transform: translate(0px, 5px); filter: drop-shadow(0px 8px 2px #00000055);}
 }
 
 @keyframes pulse {
-  0%   {transform: scale(1);}
+  0%, 100% {transform: scale(1);}
   50%  {transform: scale(0.95);}
-  100% {transform: scale(1);}
 }
 
 @keyframes pulse2 {
-0%   {transform: rotate(-3deg) translate(0px, 0px);}
+0%, 100% {transform: rotate(-3deg) translate(0px, 0px);}
 50%  {transform: rotate(2deg) translate(0px, 8px);}
-100% {transform: rotate(-3deg) translate(0px, 0px);}
 }
