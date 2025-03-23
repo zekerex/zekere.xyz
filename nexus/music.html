@@ -12,23 +12,28 @@
             background: black;
             color: white;
             font-size: 13pt;
+            font-family: "IBM-DOS", monospace;
+        }
+  
+        p {
+            padding: 2px 0px 7px 0px;
         }
 
         .notice {
             color: rgb(255, 195, 116);
             border: 1px solid;
             font-style: italic; font-size: 15px;
-            margin-bottom: 7px;
             padding: 10px;
+            margin-bottom: 7px;
+        }
+
+        .notice p {
+            padding: 0;
         }
 
         .desc {
             padding: 10px;
             line-height: 22px;
-        }
-
-        .desc p {
-            padding-bottom: 10px;
         }
 
         .desc ul {
@@ -85,13 +90,12 @@
 </head>
 <body>
     <div class="wrapper">
-        <h1 class="rainbowtext_animated">I fucking love music</h1>
 
+        <!--preface-->
+        <h1 class="rainbowtext_animated">MUSIC!</h1>
         <div class="notice">
             <p>This should be common sense, but I want to state it anyways: I do not endorse everything an artist does 
                 just because I am a fan, I am critical of the media I consume.</p>
-
-            <p>This page is also a work in progress!</p>
         </div>
 
         <div class="desc">
@@ -104,16 +108,20 @@
             wine, at least in my experience, but I prefer to use programs that work natively, since plugin compatability is also a thing to be 
             concerned about. I may try to use it again though, seeing that Foobar's plugin ecosystem is more plentful).
             <ul>
-                <li>At any moment Youtube uploads of your favourite songs may be taken down, or Spotify decides to add in a bullshit feature 
-                    that makes artists pull out of their services. This is why it is important to me, at least, to archive music in my own little 
-                    way and to not use large, cooperate streaming services as much as possible. 
-                </li>
+                <li>UPDATE (2025-03-19): I currently use Amarok (ver_1.4.10) as my current music player, though DeadBeef is still a pretty nice 
+                    choice.</li>
             </ul>
         </p>
 
-        <p>Things that are cycling in colorful hues are of particular favourites of mine, and are things I listen to quite a lot.</p>
+        <p><i>At any moment Youtube uploads of your favourite songs may be taken down, or Spotify decides to add in a bullshit feature 
+            that makes artists pull out of their services. This is why it is important to me, at least, to archive music in my own little 
+            way and to not use large, cooperate streaming services as much as possible.</i></p>
         </div>
+        <!----->
 
+        <!--LIST-->
+        <h1 class="rainbowtext_animated">STUFF I LIKE:</h1>
+        <p>Things that are cycling in colorful hues are of particular favourites of mine, and are things I listen to quite a lot.</p>
 
         <div class="content">
 
@@ -146,6 +154,7 @@
                     <li>Built to Spill</li>
                     <li>Cardiacs</li>
                     <li>Pink Floyd</li>
+                    <li class="LSDtext">Pendulum</li>
                 </ul>
             </div>
         </div>
@@ -204,6 +213,7 @@
             </div>
         </div>
     </div>
+    <!---->
 
     </div>
 </body>

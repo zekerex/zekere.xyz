@@ -24,18 +24,25 @@
         }
         
         /*sections*/
+            section {
+                border-top: none !important;
+                border-bottom: none !important;
+            }
+
             #section1 {
             min-height: 100vh;
             background: rgba(0, 0, 0, 0.612);
-            border: .1vw dashed;
-            border-top: none;
-            border-bottom: none;
             position: relative;
+            border: .1vw dashed;
             }
 
             #section2 {
             min-height: 100vh;
-            background: rgba(0, 0, 255, 0.731);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.612), rgba(0, 0, 0, 0.413));
+            border: .1vw dashed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             }
         /*----*/
 
@@ -44,8 +51,8 @@
             
             /*Content box - this is where the actual stuff goes in*/
             .boxContent {
-            width: inherit;
-            height: inherit;
+            width: 100%;
+            height: 100%;
             color: #fff;
             background: #000 url(galaxy_texture.webp);
             background-size: cover;
@@ -59,6 +66,7 @@
             border-image: url("/assets/sona/rgb/border2.webp") 6;
             background-clip: border-box;
             background-clip: padding-box;
+            font-size: 1.7dvb;
             }
 
             .boxContent hr {
@@ -67,10 +75,10 @@
 
             /*Rainbow glowing border*/
             .therainbow {
-            width: inherit;
-            height: inherit;
+            width: 100%;
+            height: 100%;
             /*background*/
-            background: url(rainbow.webp);
+            background: conic-gradient(rgba(255,0,0,1) 0%, rgba(255,146,0,1) 15%, rgba(255,223,0,1) 27%, rgba(0,255,30,1) 40%, rgba(0,255,202,1) 52%, rgba(0,30,255,1) 65%, rgba(116,0,255,1) 77%, rgba(215,0,255,1) 95%);
             background-size: cover;
             background-position: center;
             /*position*/
@@ -99,19 +107,40 @@
             }
         /*----*/
 
+        /*resolution compatibility*/
+            @media screen and (max-width: 1400px) {
+                #wrapper {width: 70vw;}
+
+                .boxContent {
+                    font-size: 1.5dvb;
+                }
+            }
+        /*----*/
+
+        /*animations*/
+        @keyframes rainbow {
+        0%, 100% {filter: blur(.5dvb) hue-rotate(0deg) saturate(0.8)}
+        50% {filter: blur(1dvb) hue-rotate(2880deg) saturate(0.8);}
+        }
+
+        @keyframes rainbow2 {
+        0%, 100% {filter: opacity(10%) blur(.5dvb) hue-rotate(0deg);}
+        50% {filter: opacity(15%) blur(1dvb) hue-rotate(2880deg);}
+        /*----*/
+}
     </style>
 </head>
 <body>
     <div id="wrapper">
 
-        <div id="section1">
+        <section id="section1">
 
             <div style="animation: pulse 5s infinite ease-in-out">
-            <h1 class="rainbowtext_static" style="transform: rotate(-3deg); font-size: 8dvb; position: absolute; left: 1vw;">
+            <h1 class="rainbowtext_static" style="transform: rotate(-3deg); font-size: 8dvb; position: absolute; left: 2%">
             A NEW UNIVERSE...</h1>
             </div>
 
-            <div class="box" style="width: 20vw; height: 22vh; top: 10vh; right: -4vw; font-size: 1.7dvb">
+            <div class="box" style="width: 20vw; height: 22vh; top: 10vh; right: -4vw">
                 <div class="boxContent">
                     <table class="neoTable">
                         <tbody>
@@ -140,18 +169,18 @@
 
             <div style="animation: float1 6s ease-in-out infinite;">
                 <img src="neonPagedoll.webp" 
-                style="width: 33vw; position: absolute; 
-                left: 6.5vw; top: 7.5vh; animation: pulse2 4s ease-in-out infinite;">
+                style="width: 65%; position: absolute; 
+                left: 15%; top: 10vh; animation: pulse2 4s ease-in-out infinite;">
             </div>
 
             <img src="neonPageBG.webp" 
             style="position: absolute; 
-            width: 45vw; left: 2vw; 
+            width: 80%; left: 10%; top: 10vh;
             filter: opacity(7%); 
             animation: rainbow2 50s linear infinite;">
 
             <div class="box" 
-            style="width: 20vw; height: 20vh; bottom: 5vh; left: -4vw; animation-delay: .2s; font-size: 1.9dvb;">
+            style="width: 20vw; height: 16vh; bottom: 10%; left: -5%; animation-delay: .2s">
                 <div class="boxContent">
                     <p>
                         A shapeshifting entity that manifested into this realm with no rhyme or reason; 
@@ -160,11 +189,11 @@
                 </div>
                 <div class="therainbow"></div>
             </div>
-        </div>
+        </section>
 
-        <!--<div id="section2">
-            hey im a work in progress!!!!
-        </div>-->
+        <section id="section2">
+            <p style="font-size: 5dvb; animation: pulse 2s ease-in-out infinite">wip <:D</p>
+        </section>
     </div>
 </body>
 </html>

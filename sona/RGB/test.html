@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB</title>
+    <link rel="stylesheet" href="/css/defaults.css">
+    <link rel="icon" type="image/x-icon" href="/assets/icons/RGB.webp" />
+
+    <style>
+    .parent {
+        width: 50vw;
+        min-height: 100vh;
+        background: green;
+        /*grid*/
+        padding: 1dvb;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: .5em;
+    }
+        
+    .div1 {
+        grid-row: span 3 / span 3;
+        background: rgba(255, 0, 0, 0.74);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .div3 {
+        grid-row: span 2 / span 2;
+        grid-row-start: 4;
+        background: rgba(0, 42, 255, 0.74);
+    }       
+    </style>
+</head>
+
+<body>
+        
+    <div class="parent">
+        <div class="div1">
+            <p>I have no ideas for page layouts I'm sad.</p>
+            <img src="RGBpagedoll.webp" style="width: 45dvb">
+        </div>
+
+        <div class="div3">
+
+        </div>
+    </div>
+    
+</body>
+</html>
