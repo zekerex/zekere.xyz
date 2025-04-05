@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEXUS</title>
     <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.webp" />
+    <link rel="icon" type="image/x-icon" href="/favicon.webp" />
     <link href="nexus.css" rel="stylesheet" type="text/css" media="all" />
 
     <style>
@@ -158,7 +158,7 @@
                         <summary>Video Games</summary>
                         <ul>
                             <li><a href="" class="tag">Game list</a></li>
-                            <li><a href="favpokemon.html" target="iframe2" class="tag">Favourite
+                            <li><a href="pokemon/" target="iframe2" class="tag">Favourite
                                     Pokemon</a></li>
                             <li><a href="" class="tag">SPORE</a></li>
                         </ul>
@@ -178,15 +178,37 @@
     <div class="window" id="window2">
         <div class="window-content">
             
-            <iframe src="/what/fling.html" name="iframe2" id="iframe1"></iframe>
+            <iframe src="/what/fling/" name="iframe2" id="iframe1"></iframe>
         </div>
     </div>
 
     <div id="bar">
-        <button onclick="window.location.href='/about.html';">Go Back</button>
+        <button onclick="window.location.href='/about/';">Go Back</button>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        //tag colour script
+        // Define the colors corresponding to the rainbow
+        const colors = ['red', 'orange', 'yellow', 'lime', 'cyan', 'blue', 'pink', 'purple'];
+
+        // Function to assign colors to tags within each section
+        function assignColorsToTags(section) {
+            // Select all the tags in this specific section (whether it's nested or not)
+            const tags = section.querySelectorAll('.tag');
+
+            // Iterate over the tags and assign a color based on their index within this section
+            tags.forEach((tag, index) => {
+                const colorIndex = index % colors.length;  // Ensures colors cycle through the array
+                tag.classList.add(colors[colorIndex]);
+            });
+        }
+
+        // Select all top-level sections (ul or details) and apply color assignment
+        const sections = document.querySelectorAll('ul, details'); // Select both ul and details sections
+        sections.forEach(section => {
+            assignColorsToTags(section);  // Apply color assignment to each section individually
+        });
+    </script>
 </body>
 
 </html>

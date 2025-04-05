@@ -148,22 +148,22 @@ body.inactive {
 
 
 #header {
-    background: linear-gradient(360deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4784313725)), url(/assets/index/top.webp);
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4784313725)), url(top.webp);
     height: 200px
 }
 
 #middle1 {
-    background: url(/assets/index/middle1.webp);
+    background: url(middle1.webp);
     height: 300px
 }
 
 #middle2 {
-    background: url(/assets/index/middle2.webp);
+    background: url(middle2.webp);
     min-height: calc(100vh - 700px)
 }
 
 #bottom {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4784313725)), url(/assets/index/bottom.webp);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4784313725)), url(bottom.webp);
     height: 200px
 }
 
