@@ -13,36 +13,38 @@
         }
 
         body {
-        background: url(neonBG1.webp) fixed;
-        background-size: cover;
+        background: url(/assets/graphics/bg/colourful.lines.png) fixed;
+        background-size: 50% 100%;
+        background-position: center;
+        background-repeat: repeat-x;
         color: var(--text);
         }
 
         #wrapper {
         margin: 0 auto;
-        width: 50vw;
+        width: 60vw;
         }
         
         /*sections*/
             section {
                 border-top: none !important;
                 border-bottom: none !important;
+                min-height: 100vh;
+                border: .1vw dashed;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
             }
 
             #section1 {
-            min-height: 100vh;
-            background: rgba(0, 0, 0, 0.612);
-            position: relative;
-            border: .1vw dashed;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 90%, rgb(0, 0, 0)), url(/assets/graphics/bg/colourful.lines.png);
+                background-size: cover;
+                background-position: center;
             }
 
             #section2 {
-            min-height: 100vh;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.612), rgba(0, 0, 0, 0.413));
-            border: .1vw dashed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.612) 90%, rgb(0, 0, 0) 100%);
             }
         /*----*/
 
@@ -62,8 +64,8 @@
             position: absolute;
             /*border*/
             border: .2vw solid transparent;
-            -o-border-image: url("/assets/sona/rgb/border2.webp") 6;
-            border-image: url("/assets/sona/rgb/border2.webp") 6;
+            -o-border-image: url("/assets/border2.webp") 6;
+            border-image: url("/assets/border2.webp") 6;
             background-clip: border-box;
             background-clip: padding-box;
             font-size: 1.7dvb;
@@ -109,10 +111,11 @@
 
         /*resolution compatibility*/
             @media screen and (max-width: 1400px) {
-                #wrapper {width: 70vw;}
+                #wrapper {width: 53vw;}
+
 
                 .boxContent {
-                    font-size: 1.5dvb;
+                    width: 22vw !important;
                     overflow-y: scroll;
                     -ms-overflow-style: none;
                     scrollbar-width: none;
@@ -138,52 +141,49 @@
 
         <section id="section1">
 
-            <div style="animation: pulse 5s infinite ease-in-out">
-            <h1 class="rainbowtext_static" style="transform: rotate(-3deg); font-size: 8dvb; position: absolute; left: 2%">
-            A NEW UNIVERSE...</h1>
-            </div>
-
-            <div class="box" style="width: 20vw; height: 22vh; top: 10vh; right: -4vw">
-                <div class="boxContent">
-                    <table class="neoTable">
-                        <tbody>
-                            <tr>
-                                <td>NAME:</td>
-                                <td class="rainbowtext_static">Neon Starscream Duplex</td>
-                            </tr>
-                            <tr>
-                                <td>SPECIES:</td>
-                                <td>Chimera dragon; shapeshifter</td>
-                            </tr>
-                            <tr>
-                                <td>PRONOUNS:</td>
-                                <td>Any</td>
-                            </tr>
-                            <tr>
-                                <td>CREATED:</td>
-                                <td>2014</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!--title-->
+            <div style="animation: pulse 5s infinite ease-in-out; position: absolute; left: 2%; top: 0;">
+                <h1 class="rainbowtext_static" style="transform: rotate(-3deg); font-size: 7dvb;">
+                A NEW UNIVERSE...</h1>
                 </div>
+            <!--title-->
 
-            <div class="therainbow"></div>
-        </div>
+            <!--basic information box-->
+                <!--<div class="box" style="width: 20vw; height: 22vh; top: 5vh; right: -4vw">
+                    <div class="boxContent" style="display: flex; justify-content: center; align-items: center;">
+                        <table class="neoTable">
+                            <tbody>
+                                <tr>
+                                    <td>NAME:</td>
+                                    <td class="rainbowtext_static">Neon Starscream Duplex</td>
+                                </tr>
+                                <tr>
+                                    <td>SPECIES:</td>
+                                    <td>Chimera dragon; shapeshifter</td>
+                                </tr>
+                                <tr>
+                                    <td>PRONOUNS:</td>
+                                    <td>Any</td>
+                                </tr>
+                                <tr>
+                                    <td>CREATED:</td>
+                                    <td>2014</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <div style="animation: float1 6s ease-in-out infinite;">
-                <img src="neonPagedoll.webp" 
-                style="width: 65%; position: absolute; 
-                left: 15%; top: 10vh; animation: pulse2 4s ease-in-out infinite;">
-            </div>
+                <div class="therainbow"></div>
+            </div>-->
+            <!--basic information box-->
 
-            <img src="neonPageBG.webp" 
-            style="position: absolute; 
-            width: 80%; left: 10%; top: 10vh;
-            filter: opacity(7%); 
-            animation: rainbow2 50s linear infinite;">
+            <!--MAIN IMAGE-->
+            <img src="neonPagedoll2.webp" style="animation: pulse2 ease-in-out infinite 2s; width: 60%; margin-top: 3dvb;" alt="Neon">
+            <!--MAIN IMAGE-->
 
-            <div class="box" 
-            style="width: 20vw; height: 16vh; bottom: 10%; left: -5%; animation-delay: .2s">
+            <!--short description box-->
+            <!--<div class="box" 
+            style="width: 20vw; height: 16vh; bottom: 20%; left: -5%; animation-delay: .2s;">
                 <div class="boxContent">
                     <p>
                         A shapeshifting entity that manifested into this realm with no rhyme or reason; 
@@ -191,12 +191,22 @@
                     </p>
                 </div>
                 <div class="therainbow"></div>
-            </div>
+            </div>-->
+            <!--short description box-->
         </section>
 
-        <section id="section2">
-            <p style="font-size: 5dvb; animation: pulse 2s ease-in-out infinite">wip <:D</p>
-        </section>
+        <!--<section id="section2">
+        <div id="superNeon">
+            <div style="animation: float1 6s ease-in-out infinite; width: 57dvb;">
+                <img src="neonPagedoll.webp"
+                style="animation: pulse2 4s ease-in-out infinite; width: 100%;">
+            </div>
+
+            <img src="neonPageBG.webp"
+            style="filter: opacity(7%); position: absolute; width: 80%; left: 13%; top: 10vh;
+            animation: rainbow2 50s linear infinite;">
+        </div>
+        </section>-->
     </div>
 </body>
 </html>
