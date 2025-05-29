@@ -93,6 +93,9 @@ select {
   margin-top: var(--flow-spacer, 1em);
 }
 
+.p-no {padding: 0;}
+.m-no {margin: 0;}
+
 .p-em1 {
   padding: 1em;
 }
@@ -133,6 +136,14 @@ select {
   -ms-user-select: none;
   /* Internet Explorer/Edge */
   user-select: none;
+}
+
+.nolistb {
+  list-style-type: none;
+}
+
+.nolistb li {
+  list-style-type: none;
 }
 
 /*utility classes - END*/
