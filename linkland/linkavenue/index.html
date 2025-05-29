@@ -9,25 +9,38 @@
 
     <style>
 
-        body {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 10px;
-            background: #ffffff;
+        :root {
+            --bg-url: url(linkbg.webp);
+            --accent: #61b828;
         }
 
+        body {
+            margin: 0;
+            padding: 1em;
+            background: var(--bg-url) fixed;
+            background-size: cover;
+            background-position: center;
+        }
 
         #wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
 
         #main {
            background: #000;
-           border-radius: .5em;
+           border: 2px ridge var(--accent);
+           border-radius: .2em;
            padding: 1em;
            width: 60vw;
+           box-shadow: #0000008e .5em .5em .5em .2em;
+        }
+
+        .logo {
+            width: 50%;
+            margin-bottom: .2em;
         }
 
         .buttons {
@@ -45,8 +58,10 @@
         .divider {
             font-family: "IBM-BIOS", monospace;
             font-size: .7em;
-            color: #fff;
-            padding: 7px 5px 5px 5px;
+            color: #000;
+            background: var(--accent);
+            width: fit-content;
+            padding: 2px 1px 1px 2px;
         }
 
         .section {
@@ -54,64 +69,9 @@
         }
 
         hr {
-            border: solid 1px #ffffff;
-        }
-
-        @-webkit-keyframes bg-scrolling-reverse {
-        100% {
-            background-position: 50px 50px;
-        }
-        }
-        @-moz-keyframes bg-scrolling-reverse {
-        100% {
-            background-position: 50px 50px;
-        }
-        }
-        @-o-keyframes bg-scrolling-reverse {
-        100% {
-            background-position: 50px 50px;
-        }
-        }
-        @keyframes bg-scrolling-reverse {
-        100% {
-            background-position: 50px 50px;
-        }
-        }
-        @-webkit-keyframes bg-scrolling {
-        0% {
-            background-position: 50px 50px;
-        }
-        }
-        @-moz-keyframes bg-scrolling {
-        0% {
-            background-position: 50px 50px;
-        }
-        }
-        @-o-keyframes bg-scrolling {
-        0% {
-            background-position: 50px 50px;
-        }
-        }
-        @keyframes bg-scrolling {
-        0% {
-            background-position: 50px 50px;
-        }
-        }
-
-        body {
-        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
-        -webkit-animation: bg-scrolling-reverse 0.92s infinite;
-        /* Safari 4+ */
-        -moz-animation: bg-scrolling-reverse 0.92s infinite;
-        /* Fx 5+ */
-        -o-animation: bg-scrolling-reverse 0.92s infinite;
-        /* Opera 12+ */
-        animation: bg-scrolling-reverse 0.92s infinite;
-        /* IE 10+ */
-        -webkit-animation-timing-function: linear;
-        -moz-animation-timing-function: linear;
-        -o-animation-timing-function: linear;
-        animation-timing-function: linear;
+            border: solid 1px (--accent);
+            margin-top: 1em;
+            margin-bottom: 1em;
         }
     </style>
 
@@ -120,6 +80,9 @@
 
 <body>
     <div id="wrapper">
+        
+    <img class="logo" src="templogo.webp" alt="">
+
     <div id="main">
         <div class="section">
             <div class="divider">
@@ -138,7 +101,7 @@
 
                 <!--mug-->
                 <a href="https://mugrootbeerbeer.neocities.org/">
-                    <img src="mug.gif"></a>
+                    <img src="buttons/mug.gif"></a>
             </div>
         </div>
         <hr>
@@ -151,7 +114,7 @@
                 <!--k-cottonears-->
                 <a href="https://k-cottonears.neocities.org/">
                     <img
-                        src="k_cottonears.png"></a>
+                        src="buttons/k_cottonears.png"></a>
 
                 <!--rob-->
                 <a href="https://roboticoperatingbuddy.neocities.org/">
@@ -159,7 +122,7 @@
 
                 <!--draggianuniverse-->
                 <a href="https://draggianuniverse.neocities.org/">
-                    <img src="draggianuniverse.gif"></a>
+                    <img src="buttons/draggianuniverse.gif"></a>
 
                 <!--pinkderg-->
                 <a href="https://pinkderg.art/"><img src="https://pinkderg.art/88x31.gif"></a>
@@ -182,15 +145,15 @@
                 <img src="https://heckscaper.com/data/buttons/msx8831.gif"></a>
 
             <!--vertpush-->
-            <a href="https://obby.dog/"><img src="vertpush.gif" alt=""></a>
+            <a href="https://obby.dog/"><img src="buttons/vertpush.gif" alt=""></a>
 
             <!--kiophen-->
             <a href="https://mileshouse.neocities.org/">
-                <img src="kiophen.gif"></a>
+                <img src="buttons/kiophen.gif"></a>
 
             <!--xzyolotl-->
             <a href="https://xzyolotl.neocities.org/indexhome">
-                <img src="xzyolotl.gif"></a>
+                <img src="buttons/xzyolotl.gif"></a>
 
              <!--warpzone-->
              <a href="https://warp.zone/"><img src="https://warp.zone/Graphix/88x31/warpzone_button.gif" alt="warp.zone"></a>
@@ -208,14 +171,16 @@
             <a href="https://synth.download"><img src="https://synth.download/assets/buttons/synth.download.svg" alt="Synth.Download!"></a>
 
             <!--dabric-->
-            <a href="https://dabric.xyz/"><img src="dabric.webp" alt=""></a>
+            <a href="https://dabric.xyz/"><img src="buttons/dabric.webp" alt=""></a>
 
             <!--pont-->
-            <a href="https://pont.cool"><img src="pont.gif" alt=""></a>
+            <a href="https://pont.cool"><img src="buttons/pont.gif" alt=""></a>
 
             <!--radish-->
             <a href="https://radish.place/" title="The Radish Realm" target="_blank"><img alt="RADISH" src="https://radish.place/images/hotlink-ok/button.webp"></img></a>
 
+            <!--beep-->
+            <a href="https://beeps.website/"><img src="buttons/beepswashere.png" alt=""></a>
         </div>
     </div>
 </div>
