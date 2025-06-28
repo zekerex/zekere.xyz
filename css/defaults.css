@@ -165,8 +165,8 @@ select {
 }
 
 .popup .popup-content {
-  width: 50%;
-  height: 70%;
+  width: 70dvw;
+  height: 80dvh;
   background: #000;
   border: 1px solid #fff;
   padding: 5px;
@@ -187,7 +187,7 @@ select {
 .close {
   position: absolute;
   top: 0;
-  left: 10px;
+  right: 10px;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -368,7 +368,7 @@ select {
 }
 
 .rainbowtext_animated {
-  text-shadow: 3px 2px 1px white;
+  text-shadow: 3px 0px 1px white;
   background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, yellow, #ff3399, #6666ff);
   background-size: auto;
   background-clip: border-box;

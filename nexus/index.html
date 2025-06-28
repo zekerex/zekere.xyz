@@ -13,13 +13,13 @@
         :root {
             --window1-top: 0px;
             --window1-left: 0px;
-            --window1-width: 12%;
+            --window1-width: 15%;
             --window1-height: 100vh;
 
             --window2-top: 1%;
-            --window2-left: 13%;
-            --window2-width: 85.7%;
-            --window2-height: 93%;
+            --window2-left: 15.5%;
+            --window2-width: 84%;
+            --window2-height: 98%;
         }
 
         #window1 {
@@ -76,17 +76,24 @@
 
         .window-header {
             background-color: #1E1E1E;
-            color: white;
-            padding: 5px;
+            color: #fff;
+            padding: .5em;
             user-select: none;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-bottom: 1px solid #6b6b6b;
+        }
+
+        .window-header button {
+            width: 80%;
         }
 
         .window-content {
             background-color: #000000;
             flex-grow: 1;
-            padding: 10px;
+            padding: .5em 1em;
             overflow: hidden;
             position: relative;
             display: flex;
@@ -96,10 +103,10 @@
         /*window styling*/
         #window1 {
             border-right: 1px solid white;
+            font-size: 11pt;
         }
 
         #window2 {
-            padding: 0;
             border: 1px solid white;
         }
 
@@ -108,24 +115,13 @@
         }
         /*windows [END]*/
 
-        /*bottom menu bar stuff*/
-        #bar {
-            background: #e9e9e9;
-            width: 100%;
-            height: 35px;
-            color: #000;
-            padding: 5px;
-            position: absolute;
-            bottom: 0px;
-            left: 0px;
-            font-size: 12pt;
-        }
-
         /* bar button */
         button {
             border: none;
             cursor: pointer;
-            background: #b8b8b8;
+            background: #383838;
+            color: #ffffff;
+            border: 1px solid #6b6b6b;
             border-radius: 2px;
         }
 
@@ -139,7 +135,8 @@
 
     <div class="window" id="window1">
         <div class="window-header" id="header1">
-            <span>Navigation</span>
+            <h2>NEXUS BROWSER</h2>
+            <button onclick="window.location.href='/about/';">Go Back</button>
         </div>
         <div class="window-content">
             <ul
@@ -149,7 +146,7 @@
                     <ul>
                         <li><a href="" class="tag">Movies & TV</a></li>
                         <li><a href="" class="tag">Literature</a></li>
-                        <li><a href="music.html" target="iframe2" class="tag">
+                        <li><a href="music/" target="iframe2" class="tag">
                             Music</a></li>
                     </ul>
                 </details>
@@ -167,7 +164,7 @@
                 <details open="">
                     <summary>Specialized Subjects</summary>
                     <ul>
-                        <li><a href="paleo.html" target="iframe2" class="tag">Paleontology</a></li>
+                        <li><a href="paleo/" target="iframe2" class="tag">Paleontology</a></li>
                         <li><a href="" class="tag">Computing</a></li>
                     </ul>
                 </details>
@@ -180,10 +177,6 @@
             
             <iframe src="/what/fling/" name="iframe2" id="iframe1"></iframe>
         </div>
-    </div>
-
-    <div id="bar">
-        <button onclick="window.location.href='/about/';">Go Back</button>
     </div>
 
     <script>
