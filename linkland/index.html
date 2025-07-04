@@ -9,19 +9,33 @@
     <link rel="icon" type="image/x-icon" href="/assets/favicon.webp" />
 
     <style>
-        body,
-        html {
-            width: 100%;
-            background:  linear-gradient(180deg, #000000 5%, #00ffea00) fixed, url(bg.webp);
-            color: lime;
+        body {
+            padding: 1em;
+            font-size: 20pt;
+            background:  linear-gradient(180deg, #000000 5%, #00ffea00) fixed, url(bg.webp) fixed;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
         }
 
-        a {color: cyan}
+        a {color: lime}
+
+        ul, li {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
     </style>
     </head>
 
 <body>
-    <p>Linkland is being re-done from the ground up! Here are some temporary links:</p>
-    <a href="linkavenue/">cool site avenue!</a>
-    <a href="software/">software</a>
+    <wrapper>
+        <p>Linkland is being re-done from the ground up! For now, here are some temporary links:</p>
+        
+        <ul>
+            <li><a href="linkavenue/">cool sites</a></li>
+            <li><a href="software/">software</a></li>
+        </ul>
+    </wrapper>
 </body>

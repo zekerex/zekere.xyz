@@ -16,7 +16,7 @@
         }
 
         body {
-        background: var(--base-colour1) url(bg.webp) fixed;
+        background: var(--base-colour1) url(assets/bg.webp) fixed;
         background-size: cover; background-position: center;
         display: flex; justify-content: center;
         align-items: center; flex-direction: column;
@@ -28,10 +28,13 @@
             top: 0;
             animation: 1s FadeIn, 1.2s FlyIn;
             display: flex;
+            align-items: center;
             flex-direction: row;
             background-color: #000;
             border: .1em solid var(--text-colour);
-            border-top: none}
+            border-top: none;
+            color: var(--text-colour);
+            z-index: 999;}
 
             nav a {
                 display: block;
@@ -39,7 +42,7 @@
                 padding: .5em;
                 transition: background-color .10s, color .10s;
                 font-family: "IBM-DOS";
-                font-size: 1.7dvh;
+                font-size: 12pt;
                 text-decoration: none;
             }
 
@@ -162,46 +165,49 @@
     <!--nav-->
     <nav class="noselect">
         <a href="#upd8" onclick="lockBody()">UPDATES</a>
+        ·
         <a href="#sitemap" onclick="lockBody()">SITEMAP</a>
+        ·
         <a href="#FAQ" onclick="lockBody()">FAQ</a>
+        ·
         <a href="#credits" onclick="lockBody()">CREDITS</a>
+        ·
         <a href="#link" onclick="lockBody()">LINK ME!</a>
     </nav>
     <!--nav-->
 
     <div id="main">
         <!--about-->
-            <div class="div1 grid-item" style="background: url(/home/blog_button.webp);">
+            <div class="div1 grid-item" style="background: url(assets/about.webp);">
                 <a href="/about/"></a>
             </div>
         <!--about-->
 
         <!--linkland-->
-            <div class="div2 grid-item" style="background: url(linkland.webp);">
+            <div class="div2 grid-item" style="background: url(assets/linkland.webp);">
                 <a href="/linkland/"></a>
             </div>
         <!--linkland-->
 
         <!--blog-->
-            <div class="div3 grid-item" style="background: #000 url(blog.webp);
-            background-position: center;">
+            <div class="div3 grid-item" style="background: url(assets/blog.webp);">
                 <a href="https://blog.zekere.xyz"></a>
             </div>
         <!--blog-->
 
         <!--art + music-->
-            <div class="div4 grid-item" style="background: url(/home/art_button.webp);">
-                <a href=""></a>
+            <div class="div4 grid-item" style="background: url(assets/gallery.webp);">
+                <a href="/wait.html"></a>
             </div>
 
-            <div class="div5 grid-item" style="background: url(/home/art_button.webp);">
-                <a href=""></a>
+            <div class="div5 grid-item" style="background: url(assets/music.webp);">
+                <a href="/wait.html"></a>
             </div>
         <!--art + music-->
 
         <!--etc-->
-            <div class="div6 grid-item" style="background: url(/home/blog_button.webp);">
-                <a href=""></a>
+            <div class="div6 grid-item" style="background: url(assets/otherstuff.webp);">
+                <a href="/wait.html"></a>
             </div>
         <!--etc-->
     </div>
