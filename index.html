@@ -18,6 +18,10 @@
             background: #000;
             color: #fff;
             width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-family: "IBM-DOS", monospace;
             font-size: 11pt;
         }
@@ -42,9 +46,7 @@
 
 
         #mainbox {
-            min-height: 100vh;
             width: 680px;
-            margin: 0 auto;
         }
 
         /*Enter button that displays the site name*/
@@ -130,27 +132,11 @@
 
 <body>
     <div id="mainbox">
-        now entering...
         <div class="zekere">
             <span class="wow">
                 <a href="/home/">ZEKERE</a>
             </span>
         </div>
-
-        <hr>
-
-        <div class="section" style="padding-top: 5px;">
-            <div class="header">quick links:</div>
-            <div class="content">
-                <!--
-                <ul>
-                    <li><a href="">legacy versions</a></li>
-                    <li><a href="">settings</a></li>
-                </ul>-->
-                Work in progress.
-            </div>
-        </div>
-
 
         <div class="section" style="padding-top: 20px; padding-bottom: 5px;">
             <div class="header">disclaimers:</div>
@@ -161,8 +147,8 @@
                         <ul>
                             <li>This site is not designed for mobile devices. For an ideal
                                 experience, view on PC.</li>
-                            <li>This site is made using Firefox; some things like CSS animations may not entirely work, or be straight up 
-                                broken. As I continue to develop this site, I hope to improve compatibility on various browsers.</li>
+                            <li>This site was primarily made for Firefox; some features like CSS animations may not entirely work. 
+                                As I continue to develop this site, I hope to improve compatibility on various browsers.</li>
                         </ul>
                     <li><b>Javascript</b> - There is a good amount of Javascript on here.</li>
                     <li><b>Photosensitivity</b> - This site contains bright colours and occasional flashing lights.</li>
@@ -172,13 +158,5 @@
                 </ul>
             </div>
         </div>
-
-        <hr>
-
-        <div class="section" style="padding-top: 20px; display: flex; flex-direction: column; align-items: center;">
-            <img src="/assets/sleep.webp" width="310px">
-            (c) 2020 - 2025 RADIATION; all rights reserved.
-        </div>
-
     </div>
 </body>
