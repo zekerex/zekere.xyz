@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUTTONS</title>
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+
+    <style>
+        /*GENERAL*/
+            :root {
+                --bg-url: url(linkbg.webp);
+                --accent: #61b828;
+                --text: #fff;
+                --base-colour: #000;
+            }
+
+            body {
+                margin: 0;
+                padding: 1dvb;
+                background: var(--bg-url) fixed;
+                background-size: cover;
+                background-position: center;
+            }
+
+            a {color: var(--accent)}
+        /*----*/
+        
+        /*LAYOUT*/
+            .logo {
+                width: 50%;
+                margin-bottom: .10vh;
+            }
+
+            #wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            /*Main box; can be reused*/
+            #main {
+            background: var(--base-colour);
+            color: var(--text);
+            border: .3dvb ridge var(--accent);
+            border-radius: .2em;
+            box-shadow: #0000008e .5em .5em .5em .2em;
+            margin-bottom: 2vh;
+            padding: 1em;
+            width: 70%;
+            }
+
+                #main ul, li {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                }
+        /*----*/
+
+        /*DIVIDERS AND SECTIONS*/
+        .divider {
+            font-family: "IBM-BIOS", monospace;
+            font-size: 1dvb;
+            color: var(--base-colour);
+            background: linear-gradient(90deg, var(--accent), #0000);
+            padding: .5vw .2vw .2vw .5vw;
+            width: 100%;
+        }
+
+        section {
+            margin-bottom: 1.5vh;
+        }
+        /*----*/
+
+        /*BUTTONS*/
+            .buttons, .other {
+                padding-top: 1vh;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+
+                .buttons img, .other img {
+                    image-rendering: crisp-edges;
+                }
+        /*----*/
+    </style>
+
+    <script type="text/javascript" src="/JS/linkHandle.js"></script>
+</head>
+
+<body>
+    <div id="wrapper"> 
+        
+        <img class="logo" src="templogo.webp" alt="">
+
+    <div id="main">
+        <!--FRIENDS-->
+        <section>
+            <div class="divider">
+                FRIENDS
+            </div>
+            <div class="buttons">
+                <!--zoey-->
+                <a href="https://zoeyonline.me/">
+                    <img src="https://zoeyonline.me/assets/button.gif">
+                </a>
+
+                <!--kit-->
+                <a href="https://kitmeow.neocities.org">
+                    <img src="https://i.postimg.cc/fL1qzfD3/kitmethalheart2.gif"></a>
+
+                <!--mug-->
+                <a href="https://mugrootbeerbeer.neocities.org/">
+                    <img src="buttons/mug.gif"></a>
+            </div>
+        </section>
+        <!---->
+        
+        <!--NEIGHBOURS-->
+        <section>
+            <div class="divider">
+                NEIGHBOURS
+            </div>
+            <div class="buttons">
+                <!--k-cottonears-->
+                <a href="https://k-cottonears.neocities.org/">
+                    <img
+                        src="buttons/k_cottonears.png"></a>
+
+                <!--draggianuniverse-->
+                <a href="https://draggianuniverse.neocities.org/">
+                    <img src="buttons/draggianuniverse.gif"></a>
+
+                <!--pinkderg-->
+                <a href="https://pinkderg.art/"><img src="https://pinkderg.art/88x31.gif"></a>
+
+                <!--humanfinny-->
+                <a href="https://humanfinny.neocities.org/"><img
+                        src="https://64.media.tumblr.com/5ce3bdabcdb7b28ca6fcc44be522e335/3ea14a534d78ff06-0e/s100x200/3631413f6bf7bf1130de2b5a79d45dc550110066.pnj"></a>
+            </div>
+        </section>
+        <!---->
+        
+        <!--FAVOURITES-->
+        <section>
+            <div class="divider">
+                FAVOURITES, INSPIRATION
+            </div>
+            <div class="buttons">
+                <!--heckscaper-->
+                <a href="https://heckscaper.com/">
+                    <img src="https://heckscaper.com/data/buttons/msx8831.gif"></a>
+
+                <!--knf-->
+                <a href="https://allsop-lancaster.com/knf/index.html">
+                    <img src="https://allsop-lancaster.com/knf/img/button2.gif" alt=""></a>
+
+                <!--vertpush-->
+                <a href="https://obby.dog/"><img src="buttons/vertpush.gif" alt=""></a>
+
+                <!--rowan-->
+                <a href="https://rowans.blog/"><img src="https://rowans.blog/data/kinne_8831.gif" alt=""></a>
+
+                 <!--pont-->
+                <a href="https://pont.cool"><img src="buttons/pont.gif" alt=""></a>
+
+                <!--radish-->
+                <a href="https://radish.place/welcome/" title="The Radish Realm" target="_blank"><img alt="RADISH" src="https://radish.place/images/hotlink-ok/button.webp"></img></a>
+
+                <!--warpzone-->
+                <a href="https://warp.zone/"><img src="https://warp.zone/Graphix/88x31/warpzone_button.gif" alt="warp.zone"></a>
+
+                <!--espy.world-->
+                <a href="https://espimyte.com"><img src="https://espimyte.com/img/button.gif" alt="espy.world"></a>
+
+                <!--spacialcube-->
+                <a href="https://spacialcube.neocities.org"> <img src="https://spacialcube.neocities.org/devlog%20logo.gif" alt="spacialcube"> </a>
+                
+                  <!--jayeaton-->
+                <a href="https://jayeaton.site/RunawayToTheStars/home"><img src="https://jayeaton.neocities.org/btn-rtts.png" alt=""></a>
+
+                <!--xzyolotl-->
+                <a href="https://xzyolotl.neocities.org/indexhome">
+                    <img src="buttons/xzyolotl.gif"></a>
+
+                <!--synth-->
+                <a href="https://synth.download"><img src="https://synth.download/assets/buttons/synth.download.svg" alt="Synth.Download!"></a>
+
+                <!--dabric-->
+                <a href="https://dabric.xyz/"><img src="buttons/dabric.webp" alt=""></a>
+
+                <!--rm94-->
+                <a href="https://rm94.neocities.org"><img src="buttons/rm94.gif" alt=""></a>
+
+                <!--beep-->
+                <a href="https://beeps.website/"><img src="buttons/beepswashere.png" alt=""></a>
+
+                <!--silicon-->
+                <a href="https://silicon65.neocities.org/">
+                    <img src="https://silicon65.neocities.org/buttons/silicon65.png"></a>
+
+                 <!--kiophen-->
+                <a href="https://mileshouse.neocities.org/">
+                    <img src="buttons/kiophen.gif"></a>
+            </div>
+
+            <!--buttons that don't follow the typical dimensions go here:-->
+            <div class="other">
+                <!--14.ch-->
+                <a href="http://etgmz14.g1.xrea.com/top.html">
+                    <img src="http://etgmz14.g1.xrea.com/image/banner.png" alt="">
+                </a>
+            </div>
+        </section>
+        <!---->
+
+        <!--ARCHIVES-->
+        <section>
+            <div class="divider">ARCHIVES</div>
+            <div class="buttons">
+
+                <!--modarchive-->
+                <a href="https://modarchive.org/">
+                    <img src="https://rowans.blog/data/b/mod_archive.gif" alt="">
+                </a>
+
+            </div>
+        </section>
+        <!---->
+
+        <!--FUNNY SITES-->
+        <section>
+            <div class="divider">FUNNY</div>
+            <div class="buttons">
+
+                <!--crouton-->
+                <a href="https://crouton.net"><img src="buttons/crouton.png" alt=""></a>
+
+            </div>
+        </section>
+        <!---->
+    </div>
+
+    <!--NON BUTTON LINKS-->
+    <div id="main">
+        <div class="divider">OTHER LINKS</div>
+        <section>
+            <ul>
+                <li><a href="https://cloudhiker.net/">cloudhiker</a> - website exploration site!</li>
+            </ul>
+        </section>
+    </div>
+</div>
+
+    <script src="/js/linkJump.js"></script>
+</body>

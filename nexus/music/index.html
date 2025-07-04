@@ -8,15 +8,23 @@
 
     <style>
         body {
-            padding: 2em;
             background: black;
             color: white;
             font-size: 13pt;
-            font-family: "IBM-DOS", monospace;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
   
         p {
             padding: 2px 0px 7px 0px;
+        }
+
+        h2 {
+            padding: .5em 0em .5em 0em;
+            text-decoration: underline;
+        }
+
+        .wrapper {
+             padding: .5em 2em;
         }
 
         .notice {
@@ -32,8 +40,8 @@
         }
 
         .desc {
-            padding: 10px;
             line-height: 22px;
+            padding: 0em 1em;
         }
 
         .desc ul {
@@ -46,6 +54,7 @@
             grid-template-rows: repeat(6, 1fr);
             grid-column-gap: 10px;
             grid-row-gap: 10px; 
+            padding: .5em 1em;
         }
 
         .div1 { grid-area: 1 / 1 / 4 / 3; }
@@ -68,17 +77,22 @@
             padding: 7px;
         }
 
-        .columns ul, .columns li {
+        ul, li {
             list-style-type: "> ";
         }
 
-        .columns li ul {
+        li ul {
             padding-left: 10px;
         }
 
-        .columns li ul li {
+        li ul li {
             list-style-type: "└─ ";
         }
+
+        header { padding: .4em; background: #1a1a1a;
+            width: 100%; color: #fff}
+
+        header a {color: #fff}
 
         /*ANIMATIONS*/
         @keyframes LSD {
@@ -89,41 +103,39 @@
     </style>
 </head>
 <body>
-    <div class="wrapper">
 
+    <!--<header>
+        <a href="">CDs</a>
+        <a href="">Lists</a>
+    </header>-->
+
+    <div class="wrapper">
         <!--preface-->
         <h1 class="rainbowtext_animated">MUSIC!</h1>
-        <div class="notice">
-            <p>This should be common sense, but I want to state it anyways: I do not endorse everything an artist does 
-                just because I am a fan, I am critical of the media I consume.</p>
-        </div>
 
         <div class="desc">
-        <p>I don't have a RYM + last.fm. This page is sort of my equvilent to that. I am planning on going on more in-depth about a lot of the entries 
-            in here eventually.
-        </p>
-
-        <p>I mainly listen to music digitally via a media player- not Youtube or Spotify. DeaDBeeF is my program of choice when it comes to listening
-            to MP3's, FLACs, WAVs... whatever it may be. It's a good Foobar alternative if you're on Linux like me (and yes, Foobar runs decently on 
-            wine, at least in my experience, but I prefer to use programs that work natively, since plugin compatability is also a thing to be 
-            concerned about. I may try to use it again though, seeing that Foobar's plugin ecosystem is more plentful).
-            <ul>
-                <li>UPDATE (2025-03-19): I currently use Amarok (ver_1.4.10) as my current music player, though DeadBeef is still a pretty nice 
-                    choice.</li>
-            </ul>
-        </p>
-
-        <p><i>At any moment Youtube uploads of your favourite songs may be taken down, or Spotify decides to add in a terrible feature 
-            that makes artists pull out of their services. This is why it is important to me, at least, to archive music in my own little 
-            way and to not use large, cooperate streaming services as much as possible.</i></p>
+            <h2>Music files and the software that plays them:</h2>
+            <p>I mainly listen to music digitally via a media player- not Youtube or Spotify. DeaDBeeF is my program of choice when it comes to listening
+                to MP3's, FLACs, WAVs... whatever it may be. It's a good Foobar alternative if you're on Linux like me.</p>
+            
+            <p>And yes, Foobar runs decently on 
+                wine, at least in my experience, but I prefer to use programs that work natively, since plugin compatability is also a thing to be 
+                concerned about. I may try to use it again though, seeing that Foobar's plugin ecosystem is more plentful).</p>
+            
+            <h2>Why do all of this?</h2>
+            <p>At any moment Youtube uploads of your favourite songs may be taken down, or Spotify decides to add in a terrible feature 
+                that makes artists pull out of their services. This is why it is important to me, at least, to archive music in my own little 
+                way and to not use large, cooperate streaming services as much as possible.</p>
         </div>
-
-        <p>I love collecting CDs! In the future, I am going to have a page dedicated to the CDs I own.</p>
         <!----->
 
         <!--LIST-->
         <h1 class="rainbowtext_animated">STUFF I LIKE:</h1>
-        <p>Things that are cycling in colorful hues are of particular favourites of mine, and are things I listen to quite a lot.</p>
+        
+        <div class="notice">
+            <p>This should be common sense, but I want to state it anyways: I do not endorse everything an artist does 
+                just because I am a fan of their work. I am critical of the media I consume.</p>
+        </div>
 
         <div class="content">
 
@@ -133,31 +145,34 @@
                 <p>There are tons more that I like, these are just the ones I find to be the most notable:</p>
                 <div class="columns">
                 <ul>
-                    <li class="LSDtext">Igorrr</li>
-                    <li class="LSDtext">Gridlock</li>
-                    <li class="LSDtext">Plaid</li>
+                    <li>Igorrr</li>
+                    <li>Gridlock</li>
+                    <li>Plaid</li>
                     <li>Blanck Mass</li>
-                    <li class="LSDtext">Aphex Twin</li>
+                    <li>Aphex Twin</li>
                     <li>Venetian Snares</li>
                     <li>Squarepusher</li>
-                    <li class="LSDtext">Pilotredsun
+                    <li>Pilotredsun
                         <ul><li>AKA: Pilotredsky, Bittertooth</li></ul>
                     </li>
                     <li>Nine Inch Nails</li>
                     <li>TOOL</li>
-                    <li class="LSDtext">Autchere</li>
+                    <li>Autchere</li>
                     <li>NukeEmOut</li>
-                    <li class="LSDtext">Jetone 
+                    <li>Jetone 
                         <ul><li>AKA: Tim Hecker</li></ul>
                     </li>
-                    <li class="LSDtext">Razerek</li>
+                    <li>Razerek</li>
                     <li>Neuroticfish</li>
                     <li>VNV Nation</li>
-                    <li class="LSDtext">Built to Spill</li>
+                    <li>Built to Spill</li>
                     <li>Cardiacs</li>
                     <li>Pink Floyd</li>
-                    <li class="LSDtext">Pendulum</li>
-                    <li class="LSDtext">Bull of Heaven</li>
+                    <li>Pendulum</li>
+                    <li>Bull of Heaven</li>
+                    <li>Amon Tobin</li>
+                    <li>Com Truise</li>
+                    <li>kid606</li>
                 </ul>
             </div>
         </div>
@@ -166,11 +181,9 @@
     <div class="div2">
         <div class="box">
             <h3>Currently Listening...</h3>
-            <p>Tracks I've been listening to quite a bit lately.</p>
+            <p>Tracks or albums I've been listening to quite a bit lately.</p>
             <ul>
-                <li>Blanck Mass - Chernobyl</li>
-                <li>Pilotredsun - Aloe Filter</li>
-                <li>Razerek - Dream Elixir</li>
+                <li>Com Truise - In Decay</li>
             </ul>
         </div>
     </div>
@@ -180,12 +193,12 @@
             <h3>Genres I Enjoy:</h3>
                 <p>Not sorted in any particular order:</p>
                 <ul>
-                    <li class="LSDtext">IDM:
+                    <li>IDM:
                         <ul>
                             <li>Flashcore</li>
-                            <li>Breakcore (pre-2020s)
+                            <li>Breakcore (pre-2010s)
                                 <ul>
-                                    <li>There are still a lot of good stuff post-2020s, this is just a personal preference.</li>
+                                    <li>There are still a lot of good stuff post-2010s, this is just a personal preference.</li>
                                 </ul>
                             </li>
                             <li>Experimental</li>
@@ -200,18 +213,20 @@
                             <li>Gabber</li>
                         </ul>
                     </li>
-                    <li class="LSDtext">Drum n' Bass</li>
-                    <li class="LSDtext">Industrial</li>
-                    <li class="LSDtext">Metal</li>
+                    <li>Drum n' Bass</li>
+                    <li>Industrial</li>
+                    <li>Metal</li>
                     <li>Acid Techno</li>
                     <li>Bigbeat</li>
                     <li>Progressive House</li>
-                    <li class="LSDtext">FM Music
+                    <li>90s FM:
                         <ul>
-                        <li>AKA: "Keygen" or "Tracker Music</li>
+                        <li>AKA: "Keygen", "Amiga Music" or "Tracker Music"</li>
                         </ul>
                     </li>
-                    <li class="LSDtext">Chiptune</li>
+                    <li>Chiptune</li>
+                    <li>Vaporwave</li>
+                    <li>Synthwave</li>
                 </ul>
             </div>
         </div>
