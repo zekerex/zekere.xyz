@@ -1,29 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
-    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="index.css" rel="stylesheet" type="text/css" media="all" />
+     <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="icon" type="image/x-icon" href="/favicon.webp" />
 
-    <script>
-        // Function to add the "inactive" class to the body
-        function lockBody() {
-            document.body.classList.add('inactive'); // Adds "inactive" class to body
+    <style>
+        :root {
+        --accent-colour: #baff1b;
+        --text-colour: #efefef;
+        --base-colour1: #1d1d1d;
+        --base-colour2: #292929;
         }
 
-        // Function to remove the "inactive" class from the body
-        function unlock() {
-            document.body.classList.remove('inactive'); // Removes "inactive" class from body
+        body {
+        background: var(--base-colour1) url(assets/bg.webp) fixed;
+        background-size: cover; background-position: center;
+        display: flex; justify-content: center;
+        align-items: center; flex-direction: column;
+        image-rendering: crisp-edges;}
+
+
+        /*NAVIGATION PANEL*/
+        nav {position: fixed; 
+            top: 0;
+            animation: 1s FadeIn, 1.2s FlyIn;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            background-color: #000;
+            border: .1em solid var(--text-colour);
+            border-top: none;
+            color: var(--text-colour);
+            z-index: 80;}
+
+            nav a {
+                display: block;
+                color: var(--text-colour);
+                padding: .5em;
+                transition: background-color .10s, color .10s;
+                font-family: "IBM-DOS";
+                font-size: 12pt;
+                text-decoration: none;
+            }
+
+            nav a:hover {
+                background-color: var(--text-colour);
+                color: var(--base-colour1);
+            }
+        /*----*/
+
+        /*MAIN LAYOUT AND GRID*/
+
+        #main {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            gap: .5em;
+            width: 1200px;
+            min-height: 750px;
+            animation: 1s FadeIn, 1s FlyIn;
         }
-    </script>
+            
+        .div1 {
+            grid-column: span 8 / span 8;
+            grid-row: span 2 / span 2;
+        }
+
+        .div2 {
+            grid-column: span 2 / span 2;
+            grid-row: span 2 / span 2;
+            grid-column-start: 9;
+        }
+
+        .div3 {
+            grid-column: span 4 / span 4;
+            grid-row: span 6 / span 6;
+            grid-row-start: 3;
+        }
+
+        .div4 {
+            grid-column: span 3 / span 3;
+            grid-row: span 3 / span 3;
+            grid-column-start: 5;
+            grid-row-start: 3;
+        }
+
+        .div5 {
+            grid-column: span 3 / span 3;
+            grid-row: span 3 / span 3;
+            grid-column-start: 8;
+            grid-row-start: 3;
+        }
+
+        .div6 {
+            grid-column: span 6 / span 6;
+            grid-row: span 3 / span 3;
+            grid-column-start: 5;
+            grid-row-start: 6;
+        }
+
+        .grid-item {border: .1vw solid var(--accent-colour);
+        background-size: cover !important; background-repeat: no-repeat !important;}
+
+        .grid-item {
+            filter: grayscale(100%) hue-rotate(360deg);
+            transition: filter ease-in .20s;
+        }
+
+        .grid-item:hover {
+            filter: grayscale(0%);
+            transition: filter ease-out .10s;
+        }
+
+        .grid-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        /*----*/
+    </style>
 </head>
+<body>
 
-<body class="">
-
+    <!--popups-->
     <div class="popup" id="upd8">
         <a href="#" class="close" onclick="unlock()"></a>
         <div class="popup-content">
@@ -52,122 +154,63 @@
         </div>
     </div>
 
-    <div style="background: #141414; color: #ccc">
-    <p>The homepage is getting a <u>rehaul</u>! Keep your eyes peeled!</p>
-    </div>
-
-    <div id="wrapper">
-        <div id="section1">
-
-            <div id="header"></div>
-            <div id="middle1"></div>
-            <div id="middle2">
-                <div id="menu">
-                    <div class="sidebar">
-                        <img src="sidebar.webp">
-
-                        <div class="about button"><a href="/about/"><img src="about_button.gif"></a>
-                        </div>
-                        <div class="blog button"><a href="https://blog.zekere.xyz/"><img src="blog_button.gif"></a></div>
-                        <div class="art button"><a href="/wait.html"><img src="art_button.gif"></a></div>
-                        <div class="more button"><a href=""><img src="more_button.gif"></a></div>
-                    </div>
-                    
-                    
-                <!--<div class="charpixel">
-                        <img src="clover.png">
-                        <img src="iroha.png">
-                        <img src="candleflame.png">
-                        <img src="filaris.png">
-                </div>-->
-
-                </div>
-
-                <!--<div class="menu2 noselect">
-                    <a href="#updates">UPDATES</a>
-                    <a href="#settings">SETTINGS</a>
-                    <a href="#credits">CREDITS</a>
-                </div>-->
-            </div>
-
-            <div class="menu noselect">
-                <a href="#upd8" onclick="lockBody()">
-                    <div class="item">
-                        <div class="itemtext">UPDATES</div>
-                    </div>
-                </a>
-
-                <a href="#sitemap" onclick="lockBody()">
-                    <div class="item">
-                        <div class="itemtext">SITEMAP</div>
-                    </div>
-                </a>
-
-                <a href="#FAQ" onclick="lockBody()">
-                    <div class="item">
-                        <div class="itemtext">FAQ</div>
-                    </div>
-                </a>
-
-                <a href="#credits" onclick="lockBody()">
-                    <div class="item">
-                        <div class="itemtext">CREDITS</div>
-                    </div>
-                </a>
-
-
-            </div>
-            <div id="bottom"></div>
-        </div>
-
-        <div id="section2">
-            <div class="main">
-                <!--Webrings-->
-                <div class="parent">
-                    <div class="div1" alt="webring">
-                        <div class="header text-left">WEBRINGS</div>
-                        <div class="box">
-                            <script src="https://juneish.neocities.org/ring/beepbox/ring.js"></script>
-                        </div>
-                    </div>
-                    <!--Webrings-->
-
-                    <!--Link Back-->
-                    <div class="div2" alt="link">
-                        <div class="link">
-                            <div class="text">
-
-                                <!--description-->
-                                <p data-i18n="Link_Back_desc">If you find my page to be cool enough to want to link it,
-                                    thanks! You can link it back using these neat little buttons here:</p>
-                                <!--description-->
-
-                                <!--button + code preview-->
-                                <div style="display: flex; flex-direction: column; gap: 5px; justify-content: center; align-items: center;">
-                                <img src="/assets/zekerebutton.gif" alt="">
-                                <img src="/assets/zekerebutton2.gif" alt="">
-                                <img src="/assets/zekerebutton2_STATIC.png" alt="">
-                                </div>
-                                <!--button + code preview-->
-
-                            </div>
-                            <img src="link.gif">
-                        </div>
-                    </div>
-                    <!--Link Back-->
-                </div>
-
-                <div class="div3">
-                    <a href="/linkland/">
-                        <div class="button">
-                            <img src="cool_links.gif">
-                        </div>
-                    </a>
-                </div>
-
-            </div>
+    <div class="popup" id="link">
+        <a href="#" class="close" onclick="unlock()"></a>
+        <div class="popup-content">
+            <iframe src="popup/link.html"></iframe>
         </div>
     </div>
+    <!--popups-->
+
+    <!--nav-->
+    <nav class="noselect">
+        <a href="#upd8" onclick="lockBody()">UPDATES</a>
+        ·
+        <a href="#sitemap" onclick="lockBody()">SITEMAP</a>
+        ·
+        <a href="#FAQ" onclick="lockBody()">FAQ</a>
+        ·
+        <a href="#credits" onclick="lockBody()">CREDITS</a>
+        ·
+        <a href="#link" onclick="lockBody()">LINK ME!</a>
+    </nav>
+    <!--nav-->
+
+    <div id="main">
+        <!--about-->
+            <div class="div1 grid-item" style="background: url(assets/about.webp);">
+                <a href="/about/"></a>
+            </div>
+        <!--about-->
+
+        <!--linkland-->
+            <div class="div2 grid-item" style="background: url(assets/linkland.webp);">
+                <a href="/linkland/"></a>
+            </div>
+        <!--linkland-->
+
+        <!--blog-->
+            <div class="div3 grid-item" style="background: url(assets/blog.webp);">
+                <a href="https://blog.zekere.xyz"></a>
+            </div>
+        <!--blog-->
+
+        <!--art + music-->
+            <div class="div4 grid-item" style="background: url(assets/gallery.webp);">
+                <a href="/wait.html"></a>
+            </div>
+
+            <div class="div5 grid-item" style="background: url(assets/music.webp);">
+                <a href="/wait.html"></a>
+            </div>
+        <!--art + music-->
+
+        <!--etc-->
+            <div class="div6 grid-item" style="background: url(assets/otherstuff.webp);">
+                <a href="/wait.html"></a>
+            </div>
+        <!--etc-->
+    </div>
+
 </body>
-
 </html>

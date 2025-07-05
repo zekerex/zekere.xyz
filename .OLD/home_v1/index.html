@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="index.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="/favicon.webp" />
+
+    <script>
+        // Function to add the "inactive" class to the body
+        function lockBody() {
+            document.body.classList.add('inactive'); // Adds "inactive" class to body
+        }
+
+        // Function to remove the "inactive" class from the body
+        function unlock() {
+            document.body.classList.remove('inactive'); // Removes "inactive" class from body
+        }
+    </script>
+</head>
+
+<body class="">
+
+    <div class="popup" id="upd8">
+        <a href="#" class="close" onclick="unlock()"></a>
+        <div class="popup-content">
+            <iframe src="/wait.html"></iframe>
+        </div>
+    </div>
+
+    <div class="popup" id="sitemap">
+        <a href="#" class="close" onclick="unlock()"></a>
+        <div class="popup-content">
+            <iframe src="/wait.html"></iframe>
+        </div>
+    </div>
+
+    <div class="popup" id="FAQ">
+        <a href="#" class="close" onclick="unlock()"></a>
+        <div class="popup-content">
+            <iframe src="popup/FAQ.html"></iframe>
+        </div>
+    </div>
+
+    <div class="popup" id="credits">
+        <a href="#" class="close" onclick="unlock()"></a>
+        <div class="popup-content">
+            <iframe src="popup/credits.html"></iframe>
+        </div>
+    </div>
+
+    <div style="background: #141414; color: #ccc">
+    <p>The homepage is getting a <u>rehaul</u>! Keep your eyes peeled!</p>
+    </div>
+
+    <div id="wrapper">
+        <div id="section1">
+
+            <div id="header"></div>
+            <div id="middle1"></div>
+            <div id="middle2">
+                <div id="menu">
+                    <div class="sidebar">
+                        <img src="sidebar.webp">
+
+                        <div class="about button"><a href="/about/"><img src="about_button.gif"></a>
+                        </div>
+                        <div class="blog button"><a href="https://blog.zekere.xyz/"><img src="blog_button.gif"></a></div>
+                        <div class="art button"><a href="/wait.html"><img src="art_button.gif"></a></div>
+                        <div class="more button"><a href=""><img src="more_button.gif"></a></div>
+                    </div>
+                    
+                    
+                <!--<div class="charpixel">
+                        <img src="clover.png">
+                        <img src="iroha.png">
+                        <img src="candleflame.png">
+                        <img src="filaris.png">
+                </div>-->
+
+                </div>
+
+                <!--<div class="menu2 noselect">
+                    <a href="#updates">UPDATES</a>
+                    <a href="#settings">SETTINGS</a>
+                    <a href="#credits">CREDITS</a>
+                </div>-->
+            </div>
+
+            <div class="menu noselect">
+                <a href="#upd8" onclick="lockBody()">
+                    <div class="item">
+                        <div class="itemtext">UPDATES</div>
+                    </div>
+                </a>
+
+                <a href="#sitemap" onclick="lockBody()">
+                    <div class="item">
+                        <div class="itemtext">SITEMAP</div>
+                    </div>
+                </a>
+
+                <a href="#FAQ" onclick="lockBody()">
+                    <div class="item">
+                        <div class="itemtext">FAQ</div>
+                    </div>
+                </a>
+
+                <a href="#credits" onclick="lockBody()">
+                    <div class="item">
+                        <div class="itemtext">CREDITS</div>
+                    </div>
+                </a>
+
+
+            </div>
+            <div id="bottom"></div>
+        </div>
+
+        <div id="section2">
+            <div class="main">
+                <!--Webrings-->
+                <div class="parent">
+                    <div class="div1" alt="webring">
+                        <div class="header text-left">WEBRINGS</div>
+                        <div class="box">
+                            <script src="https://juneish.neocities.org/ring/beepbox/ring.js"></script>
+                        </div>
+                    </div>
+                    <!--Webrings-->
+
+                    <!--Link Back-->
+                    <div class="div2" alt="link">
+                        <div class="link">
+                            <div class="text">
+
+                                <!--description-->
+                                <p data-i18n="Link_Back_desc">If you find my page to be cool enough to want to link it,
+                                    thanks! You can link it back using these neat little buttons here:</p>
+                                <!--description-->
+
+                                <!--button + code preview-->
+                                <div style="display: flex; flex-direction: column; gap: 5px; justify-content: center; align-items: center;">
+                                <img src="/assets/zekerebutton.gif" alt="">
+                                <img src="/assets/zekerebutton2.gif" alt="">
+                                <img src="/assets/zekerebutton2_STATIC.png" alt="">
+                                </div>
+                                <!--button + code preview-->
+
+                            </div>
+                            <img src="link.gif">
+                        </div>
+                    </div>
+                    <!--Link Back-->
+                </div>
+
+                <div class="div3">
+                    <a href="/linkland/">
+                        <div class="button">
+                            <img src="cool_links.gif">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,22 +1,38 @@
+:root {
+    --base-colour: #171717;
+    --text-colour: #b6b6b6;
+    --text-bold: #e2e2e2;
+    --muted: #6e6b6bd7;
+    --accent: #baff1b;
+
+    --block: #22222275;
+    --header: #ffffff15;
+}
+
+
 body {
-    background: #000;
-    color: #b6b6b6;
+    background: var(--base-colour) url(/assets/basicbg.webp) fixed;
+    background-position: center; background-size: cover;
+    color: var(--text-colour);
     padding: 1em;
-    font-family: "IBM-DOS"
+    font-size: 13pt;
+    line-height: 20px;
 }
 
 p {
-    padding: 5px;
+    padding: .5em 0em .5em 0em;
 }
 
-.muted {color: #6e6b6b}
+.muted {color: var(--muted)}
 
-a, .gern {
-    color: #81b112;
+a, .highlight {
+    color: var(--accent);
 }
 
 ul {
     margin: 0;
+    padding-top: .5em;
+    padding-bottom: .5em
 }
 
 .chunk {
@@ -28,6 +44,26 @@ ul {
     padding: 2px 7px 15px 30px;
 }
 
+hr {
+    margin: 1em 0em 1em 0em;
+}
+
 h1, h2, h3, h4, .header {
-    color: #fff;
+    color: var(--text-bold);
+    background: var(--header);
+    padding: .5em .2em .5em .2em;
+    border-radius: .1em;
+}
+
+section {
+    margin-top: 1em;
+}
+
+.subsection {
+    margin-bottom: 1em;
+}
+
+.block {
+    background: var(--block); padding: 1em; border: 1px solid #ffffff21; border-radius: .1em;
+    backdrop-filter: blur(10px);
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/basic.css" rel="stylesheet" type="text/css" media="all" />
+    <title>Link Me!</title>
+
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        textarea {
+            background: #000;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        #wrapper {
+            width: 80%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper" class="block">
+        <h1>Link ZEKERE.XYZ!</h1>
+        <p>Right click on the image you want, then click, "copy image URL." Then 
+            use the template below to create your link. You can place it anywhere!
+        </p>
+
+        <p>88 x 31 buttons:</p>
+        <div style="display: flex; gap: 5px; justify-content: center; align-items: center;">
+            <img src="/assets/zekerebutton.gif" alt="">
+            <img src="/assets/zekerebutton2.gif" alt="">
+            <img src="/assets/zekerebutton2_STATIC.png" alt="">
+        </div>
+    
+        <div style="margin-top: 1em;">
+        <textarea onclick="focus(); select()" style="width: 100%;">
+            <a href="https://zekere.xyz"><img src="[CHOSEN BUTTON HERE]" alt=""></a>
+        </textarea>
+        </div>
+    </div>
+</body>
+</html>
