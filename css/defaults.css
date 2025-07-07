@@ -310,6 +310,19 @@ select {
 
 /*tree-styled lists - END*/
 
+/*Loading Screen*/
+.loadingScreen {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--base-colour3);
+  color: var(--text-colour);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: display 1s;
+}
 
 /*tags and text*/
 .tag {

@@ -4,38 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
-     <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="icon" type="image/x-icon" href="/favicon.webp" />
 
-    <style>
+     <style>
         :root {
         --accent-colour: #baff1b;
         --text-colour: #efefef;
         --base-colour1: #1d1d1d;
         --base-colour2: #292929;
+        --base-colour3: #000;
         }
 
         body {
-        background: var(--base-colour1) url(assets/bg.webp) fixed;
+        background: var(--base-colour1) url(assets/bg2.gif) fixed;
         background-size: cover; background-position: center;
         display: flex; justify-content: center;
         align-items: center; flex-direction: column;
         image-rendering: crisp-edges;
-        animation: rainbow 100s linear infinite;}
+        animation: bg 100s linear infinite;}
 
 
         /*NAVIGATION PANEL*/
         nav {position: fixed; 
             top: 0;
-            animation: 1s FadeIn, 1.2s FlyIn;
             display: flex;
             align-items: center;
             flex-direction: row;
-            background-color: #000;
+            background-color: var(--base-colour3);
             border: .1em solid var(--text-colour);
             border-top: none;
             color: var(--text-colour);
-            z-index: 80;}
+            z-index: 80;
+            animation: FadeIn 1s, FlyIn 1.2s;}
 
             nav a {
                 display: block;
@@ -54,7 +55,6 @@
         /*----*/
 
         /*MAIN LAYOUT AND GRID*/
-
         #main {
             display: grid;
             grid-template-columns: repeat(10, 1fr);
@@ -62,7 +62,7 @@
             gap: .5em;
             width: 1200px;
             min-height: 750px;
-            animation: 1s FadeIn, 1s FlyIn;
+            animation: FadeIn 1s, FlyIn 1s;
         }
             
         .div1 {
@@ -123,30 +123,30 @@
         }
         /*----*/
 
-        /*animations*/
-        @keyframes rainbow {
+        /*MISC*/
+        .overlay {
+            z-index: -1;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: #00000093;
+        }
+        /*----*/
+
+        /*ANIMATIONS*/
+        @keyframes bg {
             0%, 100% {
                 background-position: 0 0;
-                backdrop-filter: saturate(0.8) brightness(3) contrast(3) hue-rotate(0deg);
             }
 
             50% {
                 background-position: 100% 400%;
-                backdrop-filter: saturate(0.8) brightness(3) contrast(3) hue-rotate(2880deg);
             }
         }
-
-        .overlay {
-            width: 100vw;
-            height: 100vh;
-            position: fixed;
-            z-index: -1;
-            background: #000000a2;
-        }
-    </style>
+     </style>
 </head>
+
 <body>
-    
     <div class="overlay"></div>
 
     <!--popups-->
@@ -235,6 +235,5 @@
             </div>
         <!--etc-->
     </div>
-
 </body>
 </html>
