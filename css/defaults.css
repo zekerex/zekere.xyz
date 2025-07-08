@@ -68,6 +68,12 @@ select {
   font: inherit;
 }
 
+textarea {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
 /*basic styling - END*/
 
 /*utility classes*/

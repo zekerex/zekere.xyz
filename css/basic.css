@@ -19,6 +19,16 @@ body {
     line-height: 20px;
 }
 
+.bodycenter {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#wrapper {width: 80%;}
+
 p {
     padding: .5em 0em .5em 0em;
 }
