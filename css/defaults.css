@@ -74,83 +74,88 @@ textarea {
   border: 1px solid #fff;
 }
 
-/*basic styling - END*/
-
-/*utility classes*/
-.flex {
-  display: flex;
-  gap: var(--gap, 1rem);
-}
-
-.justify {
-  justify-content: center;
-  align-items: center;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.row {
-  flex-direction: row;
-}
-
 .flow>*:where(:not(:first-child)) {
   margin-top: var(--flow-spacer, 1em);
 }
+/*basic styling - END*/
 
-.p-no {padding: 0;}
-.m-no {margin: 0;}
+/*utility classes*/
 
-.p-em1 {
-  padding: 1em;
-}
+  /*flexbox*/
+  .flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+  }
 
-.b {
-  font-weight: bold;
-}
+  .justifycenter {
+    justify-content: center;
+    align-items: center;
+  }
 
-.text-right {
-  text-align: right;
-}
+  .wrap {
+    flex-wrap: wrap;
+  }
 
-.text-left {
-  text-align: left;
-}
+  .row {
+    flex-direction: row;
+  }
 
-.text-center {
-  text-align: center;
-}
+  .column {
+    flex-direction: column;
+  }
 
-.no-underline {
-  text-decoration: none;
-}
+  /*padding*/
+  .p-no {padding: 0;}
+  .m-no {margin: 0;}
 
-.align-self {
-  align-self: center;
-}
+  .p-em1 {
+    padding: 1em;
+  }
 
-.noselect {
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  -khtml-user-select: none;
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Old versions of Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-}
+  /*text formatting*/
+  .b {
+    font-weight: bold;
+  }
 
-.nolistb {
-  list-style-type: none;
-}
+  .text-right {
+    text-align: right;
+  }
 
-.nolistb li {
-  list-style-type: none;
-}
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .no-underline {
+    text-decoration: none;
+  }
+
+  /*no selection*/
+  .noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+  }
+
+    /*lists*/
+  .nolistb {
+    list-style-type: none;
+  }
+
+  .nolistb li {
+    list-style-type: none;
+  }
 
 /*utility classes - END*/
 

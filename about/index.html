@@ -151,7 +151,7 @@
             position: relative;
             z-index: 2;
             left: 545px;
-            top: 80px;
+            top: 100px;
             width: 600px;
             height: 440px;
         }
@@ -179,36 +179,17 @@
         /*sona header atop of the section*/
         .sonas {
             position: relative;
-            left: 80px;
+            left: 170px;
+            top: -20px;
         }
 
         .sonas img {
-            width: 500px;
+            width: 300px;
         }
 
         .sonas img:hover {
             filter: brightness(130%)
         }
-
-            /*tooltip for the sona header*/
-            .tooltip {
-                position: absolute;
-                top: -35px;
-                visibility: hidden;
-                background-color: #000000;
-                color: #00ff22;
-                border: 4px inset;
-                padding: 5px;
-                font-size: 13px;
-                pointer-events: none;
-                opacity: 0;
-                z-index: 10;
-            }
-
-            .tooltip.visible {
-                visibility: visible;
-                opacity: 1;
-            }
         /*SECTION 2 -- END*/
         
 
@@ -262,8 +243,7 @@
 
         <!--sonas-->
         <div class="sonas">
-            <a href="/sona/"><img src="assets/sonas.png"></a>
-            <div class="tooltip">Learn more about my sonas on this page!</div>
+            <a href="sona/"><img src="assets/CORE05.png" alt=""></a>
         </div>
 
         <script>

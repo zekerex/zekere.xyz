@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALLERY</title>
+    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.webp" />
+
+    <style>
+        #wrapper {width: 70%; margin-left: 15%}
+
+        #sidebar {position: fixed; left: 0; top: 0; width: 17%; padding: 1em;
+        height: 100vh; border-left: none;}
+
+        body.inactive {
+        overflow: hidden
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ul.gallery {
+            --numcolumns: 5;
+            --gap: 0.25em;
+            --size: calc(100vw / var(--numcolumns));
+            display: grid;
+            grid-template-columns: repeat(var(--numcolumns), 1fr);
+            
+            grid-template-rows: auto;
+            gap: var(--gap);
+            align-items: stretch;
+            
+            list-style: none;
+        }
+
+        ul.gallery > li {
+            display: block;
+            height: calc(var(--size) - var(--gap));
+            position: relative;
+            border: 2px solid #000;
+        }
+
+        ul.gallery > li.wide {
+            grid-column: span 2;
+        }
+
+        ul.gallery > li.wider {
+            grid-column: span 3;
+        }
+
+        ul.gallery > li.high {
+            grid-row: span 2;
+            height: auto; /* to undo the height */
+        }
+
+        ul.gallery > li > a.zoomout {
+            display: none;
+        }
+
+        ul.gallery > li > a,
+        ul.gallery > li > a > img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        ul.gallery > li > a.zoomin:hover::after,
+        ul.gallery > li > a.zoomin:focus::after {
+            content: '';
+            display: block;
+            background: rgba(255, 255, 255, 0.2) no-repeat 50% 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        ul.gallery > li:focus-within,
+        ul.gallery > li:target {
+            overflow: visible;
+            z-index: 1;
+        }
+
+        /* Make sure tile of active image is on top */
+        ul.gallery > li:target {
+            z-index: 2;
+        }
+
+        /* Hide zoom in link when the tile is targetted */
+        ul.gallery > li:target > a.zoomin {
+            display: none;
+        }
+
+        /* Show zoom out (close) link when the tile is targetted */
+        ul.gallery > li:target > a.zoomout {
+            display: block;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            z-index: 12;
+        }
+
+        /* Stretch out the image */
+        ul.gallery > li > a.zoomout > img {
+            object-fit: contain;
+            padding: 1vw;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            z-index: 11;
+            background: rgb(0, 0, 0);
+        }
+
+        /* Put close link on top */
+        ul.gallery > li:target > a.zoomout::after {
+            content: 'Click or hit ESC to close';
+            background: var(--block);
+            backdrop-filter: blur(7px);
+            padding: .5em;
+            border-radius: .5em;
+            position: fixed;
+            right: 1vw;
+            bottom: 1vw;
+            font-size: 1rem;
+            color: #fff;
+            z-index: 12;
+        } 
+    </style>
+
+    <script>
+        // Make it so that ESCAPE key closes the overlay
+        document.addEventListener('keydown', (e) => {
+            
+            switch (e.key) {
+                    
+                case 'Escape':
+                case 'Esc':
+                    window.location.hash = "#close";
+                    break;
+                    
+                case 'Left':
+                case 'ArrowLeft':
+                    const currentEl = document.querySelector(window.location.hash);
+                    if (!currentEl) return;
+
+                    const prevEl = currentEl.previousElementSibling;
+                    if (!prevEl) return;
+
+                    window.location.hash = `#${prevEl.id}`;
+                    
+                    break;
+                    
+                case 'Right':
+                case 'ArrowRight':
+                    const currentEl2 = document.querySelector(window.location.hash);
+                    if (!currentEl2) return;
+
+                    const nextEl = currentEl2.nextElementSibling;
+                    if (!nextEl) return;
+
+                    window.location.hash = `#${nextEl.id}`;
+                    
+                    break;
+                    
+                default:
+                    return;
+                    
+            }
+        });
+    </script>
+
+    <script>
+        // Function to add the "inactive" class to the body
+        function lockBody() {
+            document.body.classList.add('inactive'); // Adds "inactive" class to body
+        }
+
+        // Function to remove the "inactive" class from the body
+        function unlock() {
+            document.body.classList.remove('inactive'); // Removes "inactive" class from body
+        }
+    </script>
+</head>
+<body class="bodycenter">
+
+    <div id="sidebar" class="block">
+        <h2 style="width:100%; text-align: center;">PORTFOLIO</h2>
+
+        <p>Welcome to the gallery! This page showcases works I consider to be my best; it isn't a comprehensive list of 
+            everything that I've ever made.</p>
+        <p>So far, this gallery only includes my <u>digital artworks</u>, but I plan to add more as I continue to create and 
+        expand my skills.</p>
+
+        <hr>
+
+        <i class="muted text-sm"><p>Note: For storage reasons, I am hosting these images on an external host called <u>Filegarden</u>. 
+            If the images fail to load, it may be because Filegarden is blocked by your ISP.</p>
+            <p>I plan to remendy this issue once I get a new host, I apologize for the inconvenience!</p></i>
+
+        <hr>
+
+        <div class="flex justifycenter">
+            <button onclick="window.location.href='/home/';" style="width: 100%; margin-top: 1em">Go Back</button>
+        </div>
+    </div>
+
+    <div id="wrapper">
+    <ul class="gallery">
+        <li id="image-001" class="high wide">
+            <a href="#image-001" onclick="lockBody()" class="zoomin" title="Zoom In"><img width="768" height="576" src="" alt="" title="" loading="lazy" /></a>
+            <a href="#close" onclick="unlock()" class="zoomout" title="Zoom Out" autofocus="true"><img width="768" height="576" src="" alt="" title="" loading="lazy" /></a>
+        </li>
+        <li id="image-002" class="wider">
+            <a href="#image-002" onclick="lockBody()" class="zoomin" title="Zoom In"><img width="768" height="576" src="" alt="" title="" loading="lazy" /></a>
+            <a href="#close" onclick="unlock()" class="zoomout" title="Zoom Out" autofocus="true"><img width="768" height="576" src="" alt="" title="" loading="lazy" /></a>
+        </li>
+        <li id="image-003" class="high wider">
+            <a href="#image-003" onclick="lockBody()" class="zoomin" title="Zoom In"><img width="768" height="576" src="" alt="" title="" loading="lazy" /></a>
+            <a href="#close" onclick="unlock()" class="zoomout" title="Zoom Out" autofocus="true"><img width="768" height="576" src="" alt="" title="" loading="lazy" /></a>
+        </li>
+        <li id="image-004" class="wide">
+            <a href="#image-004" onclick="lockBody()" class="zoomin" title="Zoom In"><img width="768" height="576" src="" alt="" title="" loading="lazy" /></a>
+            <a href="#close" onclick="unlock()" class="zoomout" title="Zoom Out" autofocus="true"><img width="768" height="576" src="" alt="" title="" loading="lazy" /></a>
+        </li>
+    </ul>
+    </div>
+</body>
+</html>
