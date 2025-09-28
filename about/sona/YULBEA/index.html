@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YULBEA</title>
+    <link rel="stylesheet" href="/css/defaults.css">
+</head>
+
+<style>
+    :root {
+        --body-padding: 1em;
+        --font-size: 11pt;
+        --line-height: 20px;
+        --p-padding: .5em 0em .5em 0em;
+
+        --table-radius: .5em;
+
+        --text-color: #fff;
+        --border-color: #ffffff7f;
+        --base-color: #00aaaa; 
+        --base-color-transparent: #00aaaa63;
+        --secondary-color: #030f4ab3;
+    }
+
+    body {
+        background: url(bg1.png);
+        image-rendering: crisp-edges;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--text-color);
+        font-family: "Comfortaa", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #container {
+        width: 60%;
+        animation: bounce .4s ease-in-out, FadeIn .4s;
+    }
+
+    .bubble {
+        border-radius: 3rem;
+        padding: 4px;
+        box-shadow: inset var(--base-color) 0 0 33px 3px;
+        background: linear-gradient(#0000, var(--secondary-color));
+    }
+    
+    p {
+        text-shadow: 1px 1px 3px #000;
+        margin-bottom: 1em;
+    }
+
+    h1, h2, h3, h4 {font-family: "Dodopop" !important}
+
+
+    /*--TABLE--*/
+        table {
+        background: var(--base-color-transparent); 
+        border: 1px var(--border-color) solid; 
+        width: 45%; 
+        border-radius: var(--table-radius);}
+        
+        td {
+            padding: 7px; 
+            width: inherit;
+            border: 1px var(--border-color) solid;
+        }
+    /*--TABLE--*/
+</style>
+
+<body>
+    <div id="container" class="bubble">
+        <div class="bubble padding-1em flex flex-justify-center flex-column">
+            <img src="yulbea_logo.webp" class="bubble radius-2em" alt="">
+
+            <div class="text">
+                <img src="yulbea.webp" alt="" 
+                style="float: right; width: 55%; 
+                padding: 1em; border-radius: 2em;">
+
+                <h1>basic info:</h1>
+                <table style="margin-top: 1em; margin-bottom: .5em;">
+                    <tr>
+                        <td style="border-top-left-radius: var(--table-radius);">Name:</td>
+                        <td style="border-top-right-radius: var(--table-radius)">Yulbea</td>
+                    </tr>
+
+                    <tr>
+                        <td>Species:</td>
+                        <td>Unknown</td>
+                    </tr>
+
+                    <tr>
+                        <td>Dwelling:</td>
+                        <td>Thalas</td>
+                    </tr>
+
+                    <tr>
+                        <td style="border-bottom-left-radius: var(--table-radius)">Year Created:</td>
+                        <td style="border-bottom-right-radius: var(--table-radius)">2025</td>
+                    </tr>
+                </table>
+
+                <p>Yulbea is a curious creature.</p>
+
+                <h1>personality:</h1>
+                <p>WIP</p>
+
+                <h1>shapeshifting:</h1>
+                <p>WIP</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

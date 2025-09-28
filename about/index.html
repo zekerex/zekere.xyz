@@ -9,6 +9,11 @@
     <link rel="icon" type="image/x-icon" href="/favicon.webp" />
 
 <style>
+
+    :root {
+        --base_accent: white;
+    }
+
     /*GENERAL*/
         html, body {
             background: #000000 url(assets/BG.webp);
@@ -17,6 +22,7 @@
             background-repeat: no-repeat;
             color: #cecece;
             image-rendering: crisp-edges;
+            overflow-x: hidden;
         }
 
         a {color:#00ff22;}
@@ -244,7 +250,10 @@
 
         <!--sonas-->
         <div class="sonas">
-            <a href="sona/"><img src="assets/CORE05.png" alt=""></a>
+            <div class="tooltip">
+                <a href="sona/"><img src="assets/CORE05.png" alt=""></a>
+                <div class="tooltiptext">Enter the CORE?</div>
+            </div>
         </div>
 
         <script>
@@ -272,9 +281,11 @@
         <div class="descbox">
 
             <div class="text">
-                <ul class="nolistb">
+                <ul class="no-list-bullet">
                     <li>NAME: RADIATION</li>
                     <li>CURRENT AREA OF RESIDENCE: inside of a green pixel.</li>
+                    <li>GENDER: NULL</li>
+                    <li>DIMENSIONS: MANY</li>
                     <li>EYES: two, sometimes three. the colour is greenish, blueish, a bit of glornish. it’s
                         hard to tell. different in any given angle. would that make it plomzesik then?</li>
                     <li>Water Monitor: <a href="/what/lizard/">pretty hydrated</a></li>
@@ -327,7 +338,7 @@
             <div class="neofetchtext">
                 radiation@spectrum<br>
                 --------------------
-                <ul class="nolistb p-no m-no">
+                <ul class="no-list-bullet no-padding no-margins">
                 <li><span class="neo-accent">OS</span>: Debian GNU/Linux 12 (bookworm) x86_64</li>
                 <li><span class="neo-accent">Host</span>: hypercube-9</li>
                 <li><span class="neo-accent">Kernel</span>: Linux 6.1.0-37-amd64</li>
@@ -343,8 +354,6 @@
                 <span class="yellow tag">obsidian</span> - documents, notes<br>
                 <span class="lime tag">kdenlive</span> - video editor</span><br>
                 <span class="cyan tag">Ultrabox</span> + <span class="blue tag">Sunvox</span> - music</p>
-
-                <p>See more <a href="computerism/">computerism</a>?</p>
             </div>
             <!--text-->
 

@@ -14,13 +14,15 @@
             --accent2: #00ff88;
             --base: #000;
             --base_accent: #d3d3d3;
+
+            --tooltip-width: 120px;
         }
 
         /*basic stuff*/
         body {
             background:
                 linear-gradient(180deg, #000000 30%, #00ffea00) fixed,
-                url("bg.webp") fixed;
+                url("!assets/bg.webp") fixed;
             color: var(--base_accent);
             animation: rainbow 100s linear infinite;
         }
@@ -62,6 +64,7 @@
 
         #nav a {
             display: block;
+            margin-bottom: 5px;
         }
         /*----*/
 
@@ -113,6 +116,14 @@
     <div id="wrapper">
         <div id="nav">
             <a href="/about/">BACK</a>
+            <a href="#moreinfo">INFO</a>
+        </div>
+
+        <div class="popup" id="moreinfo">
+            <a href="#" class="close"></a>
+            <div class="popup-content">
+                <iframe src="info.html"></iframe>
+            </div>
         </div>
 
 
@@ -123,24 +134,35 @@
             animation-delay: .1s">
             <div class="tooltip">
                 <div class="tooltiptext">RK-0</div>
-                <img src="RK-0.webp" alt="RK-0">
+                <img src="!assets/RK-0.webp" alt="RK-0">
             </div>
             </div></a>
 
+            <a href="YULBEA/">
+                <div class="char" style="color: cyan; background: url(YULBEA/bg1.png);
+                animation-delay: .2s">
+                    <div class="tooltip">
+                        <div class="tooltiptext">YULBEA</div>
+                        <img src="!assets/YULBEA.webp" alt="YULBEA">
+                    </div>
+                </div>
+            </a>
+
             <a href="INTRAMATRIX/">
-            <div class="char" style="color: #ccc; background: url(/assets/graphics/bg/colourful.crackle.gif); animation-delay: .3s;">
+            <div class="char" style="color: #ccc; background: url(/assets/graphics/bg/colourful.crackle.gif); 
+            animation-delay: .3s;">
                 <div class="tooltip">
                     <div class="tooltiptext">INTRAMATRIX</div>
-                    <img src="intramatrix.webp" alt="INTRAMATRIX">
+                    <img src="!assets/intramatrix.webp" alt="INTRAMATRIX">
                 </div>
             </div></a>
 
 
             <a href="TERMINAL/">
-                <div class="char" style="color: #3e3e3e; background: url(/sona/TERMINAL/BG.webp); animation-delay: .2s">
+                <div class="char" style="color: #3e3e3e; background: url(TERMINAL/BG.webp); animation-delay: .2s">
                     <div class="tooltip">
                         <div class="tooltiptext">TERMINAL</div>
-                        <img src="TERMINAL.webp" alt="TERMINAL">
+                        <img src="!assets/TERMINAL.webp" alt="TERMINAL">
                     </div>
             </div></a>
             
@@ -149,7 +171,7 @@
             background-size: cover;">
             <div class="tooltip">
                 <div class="tooltiptext">RGB</div>
-                <img src="RGB.webp" alt="RGB">
+                <img src="!assets/RGB.webp" alt="RGB">
             </div>
             </div></a>
 
@@ -158,7 +180,7 @@
             background-size: 20px;">
                 <div class="tooltip">
                     <div class="tooltiptext">JIGSAW</div>
-                    <img src="JIGSAW.webp" alt="JIGSAW">
+                    <img src="!assets/JIGSAW.webp" alt="JIGSAW">
                 </div>
             </div></a>
 
@@ -167,7 +189,7 @@
             background-position: bottom;">
                 <div class="tooltip">
                     <div class="tooltiptext">VENDETTA</div>
-                    <img src="vendetta.webp" alt="vendetta">
+                    <img src="!assets/vendetta.webp" alt="vendetta">
                 </div>
             </div></a>
 

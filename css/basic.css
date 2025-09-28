@@ -1,4 +1,5 @@
 :root {
+    /*colors*/
     --base-colour: #171717;
     --text-colour: #b6b6b6;
     --text-bold: #e2e2e2;
@@ -9,16 +10,18 @@
     --block2: #44444473;
     --header: #ffffff15;
     --border: #ffffff21;
-}
 
+    /*specifications*/
+    --font-size: 13pt;
+    --line-height: 20px;
+    --body-padding: 1em;
+    --p-padding: .5em 0em .5em 0em;
+}
 
 body {
     background: var(--base-colour) url(/assets/basicbg.webp) fixed;
     background-position: center; background-size: cover;
     color: var(--text-colour);
-    padding: 1em;
-    font-size: 13pt;
-    line-height: 20px;
 }
 
 .bodycenter {
@@ -30,10 +33,6 @@ body {
 }
 
 #wrapper {width: 80%;}
-
-p {
-    padding: .5em 0em .5em 0em;
-}
 
 .muted {color: var(--muted);}
 
