@@ -7,8 +7,8 @@ If you think there are any parts of the site that can be improved, you are alway
 As of Oct 10, 2025: Right now this website has gotten quite big and unruly. my aim was to have each part of the site have a distinct identity, as I don't really enjoy uniformity in my designs
 (that is something I have always struggled with), so there are lots and lots of custom assets needed for that task.
 
-The other issue is that I have ran out of many ideas on what the other pages could possibly look like- among other struggles related to publishing my work online, for instance, 
-that have discouraged me from proceeding development at this time.
+The other issue is that I have ran out of many ideas on what the other pages could possibly look like. That combined with other struggles related to publishing my work online, for instance,
+has left me feel discouraged from proceeding development.
 
 JPN:
 *Coming soon.*
