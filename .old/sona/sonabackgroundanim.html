@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SONAS</title>
+    <link href="/!css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" type="image/x-icon" href="/favicon.webp" />
+
+    <style>
+        :root {
+            --accent: #11d821;
+            --accent2: #00ff88;
+            --base: #000;
+            --base_accent: #d3d3d3;
+
+            --tooltip-width: 120px;
+        }
+
+        /*basic stuff*/
+        body {
+            background:
+                linear-gradient(180deg, #000000 30%, #00ffea00) fixed,
+                url("/about/sona/!assets/bg.webp") fixed;
+            color: var(--base_accent);
+            animation: rainbow 100s linear infinite;
+        }
+
+        /*animations */
+        /*this is the main background animation, specific to only 
+        this page, at least for now.*/
+        @keyframes rainbow {
+            0%, 100% {
+                background-position: 0 0;
+                backdrop-filter: saturate(0.8) blur(8px) brightness(20) contrast(3) hue-rotate(0deg);
+            }
+
+            50% {
+                background-position: 100% 400%;
+                backdrop-filter: saturate(0.8) blur(6px) brightness(20) contrast(3) hue-rotate(2880deg);
+            }
+        }
+        /*----*/
+
+        /*sizing compatability*/
+
+        @media screen and (max-width: 750px) {
+            #main {width: 100vw;}
+            .char {width: 20vw;}
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

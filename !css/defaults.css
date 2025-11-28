@@ -1,23 +1,23 @@
 /*fonts*/
 @font-face {
   font-family: "DOS-V";
-  src: url("/assets/fonts/Px437_DOS-V_TWN16.ttf") format("truetype");}
+  src: url("/!assets/fonts/Px437_DOS-V_TWN16.ttf") format("truetype");}
 
 @font-face {
   font-family: "IBM-DOS";
-  src: url("/assets/fonts/Px437_IBM_DOS_ISO9.ttf") format("truetype");}
+  src: url("/!assets/fonts/Px437_IBM_DOS_ISO9.ttf") format("truetype");}
 
 @font-face {
   font-family: "IBM-BIOS";
-  src: url("/assets/fonts/Px437_IBM_BIOS-2x.ttf") format("truetype");}
+  src: url("/!assets/fonts/Px437_IBM_BIOS-2x.ttf") format("truetype");}
 
 @font-face {
   font-family: "Comfortaa";
-  src: url(/assets/fonts/Comfortaa.ttf) format("truetype");}
+  src: url(/!assets/fonts/Comfortaa.ttf) format("truetype");}
 
 @font-face {
   font-family: "Dodopop";
-  src: url("/assets/fonts/Dodopop.otf") format("opentype");
+  src: url("/!assets/fonts/Dodopop.otf") format("opentype");
 }
 
 body {

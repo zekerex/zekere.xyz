@@ -3,111 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUSIC IS BEST</title>
-    <link href="/css/defaults.css" rel="stylesheet" type="text/css" media="all" />
+    <title>MUSIC IS BEST!</title>
+    <link href="/!css/defaults.css" rel="stylesheet" type="text/css" media="all" />
 
     <style>
-        body {
-            background: black;
-            color: white;
-            font-size: 13pt;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-  
-        p {
-            padding: 2px 0px 7px 0px;
-        }
 
-        h2 {
-            padding: .5em 0em .5em 0em;
-            text-decoration: underline;
+        :root {
+            --gap-padding: 0.5em;
+
+            /*COLOURS*/
+            --base-colour1: #000;
+            --base-colour2: #1a1a1a ;
+            --base-accent1: #fff;
+            --base-accent2: #ccc;
+            --warning: #ffc374;
         }
 
-        .wrapper {
-             padding: .5em 2em;
-        }
+        /*BASIC STUFF*/
+            body {
+                background: var(--base-colour1);
+                color:  var(--base-accent1);
+                font-size:  13pt;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            
+            /*TEXT*/
+                p { padding: 2px 0px 7px 0px}
 
-        .notice {
-            color: rgb(255, 195, 116);
-            border: 1px solid;
-            font-style: italic; font-size: 15px;
-            padding: 10px;
-            margin-bottom: 7px;
-        }
+                h2 {padding: .5em 0em .5em 0em; text-decoration: underline;}
+            
+            /*WRAPPER*/
+                .wrapper {
+                    padding: .5em 2em;
+                }
+        /*----*/
 
-        .notice p {
-            padding: 0;
-        }
+        /*NOTICE*/
+            .notice {
+                color:  var(--warning);
+                border:  1px solid;
+                font-style: italic;
+                padding:  1em;
+                margin-bottom:  var(--gap-padding);
+            }
 
-        .desc {
-            line-height: 22px;
-            padding: 0em 1em;
-        }
+            .notice p {padding: 0;}
+        /*----*/
+        
 
-        .desc ul {
-            margin: 0;
-        }
+        /*PREFACE*/
+            .desc {
+                line-height: 22px;
+                padding: 0em 1em;
+            }
 
-        .content {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-template-rows: repeat(6, 1fr);
-            grid-column-gap: 10px;
-            grid-row-gap: 10px; 
-            padding: .5em 1em;
-        }
+            .desc ul {
+                margin: 0;
+            }
+        /*----*/
+        
 
-        .div1 { grid-area: 1 / 1 / 4 / 3; }
-        .div2 { grid-area: 4 / 1 / 7 / 3; }
-        .div3 { grid-area: 1 / 3 / 7 / 6; } 
+        /*CONTENT OF THE ACTUAL PAGE*/
+            .content {
+                display: flex;
+                gap:  var(--gap-padding);
+                margin-top:  var(--gap-padding);
+                justify-content:  center;
+            }
 
-        .box {
-            border: 1px solid;
-            padding: 1em;
-            display: block;
-            height: 100%;
-            width: 100%;
-            overflow-y: auto;
-        }
+                /*NAVIGATION*/
+                 header { padding: .4em; 
+                background:  var(--base-colour2);
+                width: 100%; color:  var(--base-accent1)}
 
-        .columns {
-            columns: 10px 2;
-            column-gap: 10px;
-            column-rule: 1px solid;
-            padding: 7px;
-        }
+                header a {color:  var(--base-accent2)}
 
-        ul, li {
-            list-style-type: "> ";
-        }
+                /*BOXES*/
+                    .box {
+                        border: 1px solid;
+                        padding: 1em;
+                        display: block;
+                        overflow-y: auto;
+                    }
 
-        li ul {
-            padding-left: 10px;
-        }
+                    .box-columns {
+                        columns: 10px 2;
+                        column-gap: 10px;
+                        column-rule: 1px solid;
+                        padding: 7px;
+                    }
 
-        li ul li {
-            list-style-type: "└─ ";
-        }
+                /*LISTS*/
+                    ul, li {
+                        list-style-type: "> ";
+                    }
 
-        header { padding: .4em; background: #1a1a1a;
-            width: 100%; color: #fff}
+                    li ul {
+                        padding-left: 10px;
+                    }
 
-        header a {color: #fff}
+                    li ul li {
+                        list-style-type: "└ ";
+                    margin-left:  .5em;
+                    }
+        /*----*/
 
         /*ANIMATIONS*/
-        @keyframes LSD {
-            0%,100% {background-position: 0 0;}
-            50% {background-position: 100% 200%;}
-        }
+            @keyframes LSD {
+                0%,100% {background-position: 0 0;}
+                50% {background-position: 100% 200%;}
+            }
+        /*----*/
 
     </style>
 </head>
 <body>
 
-    <!--<header>
-        <a href="">CDs</a>
-        <a href="">Lists</a>
-    </header>-->
+    <header>
+        LINKS: <a  href="">CDs (coming soon!)</a>
+    </header>
 
     <div class="wrapper">
         <!--preface-->
@@ -138,12 +152,10 @@
         </div>
 
         <div class="content">
-
-            <div class="div1">
             <div class="box">
                 <h3>Artists / Bands</h3>
                 <p>There are tons more that I like, these are just the ones I find to be the most notable:</p>
-                <div class="columns">
+                <div class="box-columns">
                 <ul>
                     <li>Igorrr</li>
                     <li>Gridlock</li>
@@ -176,19 +188,7 @@
                 </ul>
             </div>
         </div>
-    </div>
 
-    <div class="div2">
-        <div class="box">
-            <h3>Currently Listening...</h3>
-            <p>Tracks or albums I've been listening to quite a bit lately.</p>
-            <ul>
-                <li>Com Truise - In Decay</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="div3">
         <div class="box">
             <h3>Genres I Enjoy:</h3>
                 <p>Not sorted in any particular order:</p>
